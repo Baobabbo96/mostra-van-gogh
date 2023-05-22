@@ -18,14 +18,15 @@ public class Biglietto {
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="dataAcquisto")
+	@Column(name="data_acquisto")
 	private LocalDate dataAcquisto;
 	
-	@Column(name="detaIngresso")
+	@Column(name="deta_ingresso")
 	private LocalDate dataIngresso;
 	
 	@Column(name="prezzo")
 	private double prezzo;
+	
 	
 	//Setters and getters
 	public int getId() {

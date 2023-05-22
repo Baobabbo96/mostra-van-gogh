@@ -22,6 +22,30 @@ public class Ordine {
 	
 	@Column(name="importo")
 	private double importo;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public LocalDate getData() {
+		return data;
+	}
+
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
+
+	public double getImporto() {
+		return importo;
+	}
+
+	public void setImporto(double importo) {
+		this.importo = importo;
+	}
 	 
 	//manca id_utente 
 	
