@@ -37,3 +37,4 @@ src/main/resources/application.properties
 *.properties
 src/main/resources/application.properties
 *.properties
+.DS_Store
