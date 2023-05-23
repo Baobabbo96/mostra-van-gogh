@@ -27,8 +27,7 @@ public class OperaServiceImpl implements OperaService {
 
 	@Override
 	public List<Opera> getOpere() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<Opera>) operaDao.findAll();
 	}
 
 	@Override

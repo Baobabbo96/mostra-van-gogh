@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lista Opere</title>
+</head>
+
+<body>
+	<table>
+			<tr th:each="o : ${opere}">
+				<td th:text="${o.titolo}"></td>
+				<td th:text="${o.descrizione}"></td>
+				<td th:text="${o.tecnica}"></td>
+				<td th:text="${o.anno}"></td>
+				<td th:text="${o.prezzoStampa}"></td>
+				<td > 
+				<img th:src="@{${o.immagine}"></img>
+				</td>
+			</tr>
+		</table>
+		<a th:href="@{/registraopera}"></a>
+</body>
+
+</html>
