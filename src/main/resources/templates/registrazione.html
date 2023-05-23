@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form th:object="${utente}" method="post">
+			<input type="text" th:field="*{nome}"><br>
+			<input type="text" th:field="*{cognome}"><br>
+			<input type="text" th:field="*{username}"><br>
+			<input type="text" th:field="*{password}"><br>
+			<input type="text" th:field="*{email}"><br>
+			<input type="text" th:field="*{indirizzo}"><br>
+			<input type="text" th:field="*{comune}"><br>
+			<input type="text" th:field="*{provincia}"><br>
+			<input type="text" th:field="*{cap}"><br>
+			<input type="submit" value="Registrati">
+		</form>
+	</body>
+</html>

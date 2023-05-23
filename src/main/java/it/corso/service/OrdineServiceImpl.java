@@ -2,8 +2,11 @@ package it.corso.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import it.corso.model.Ordine;
 
+@Service
 public class OrdineServiceImpl implements OrdineService {
 
 	@Override

@@ -2,32 +2,36 @@ package it.corso.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import it.corso.dao.UtenteDao;
 import it.corso.model.Utente;
 
+@Service
 public class UtenteServiceImpl implements UtenteService {
 
+	@Autowired
+	private UtenteDao utenteDao;
+	
 	@Override
-	public void registraUtente(Utente utente, Object... dati) {
-		// TODO Auto-generated method stub
-
+	public void registraUtente(Utente utente) {
+		utenteDao.save(utente);
 	}
 
 	@Override
 	public Utente getUtenteById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return utenteDao.findById(id).get();
 	}
 
 	@Override
 	public List<Utente> getUtenti() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<Utente>) utenteDao.findAll();
 	}
 
 	@Override
 	public void cancellaUtente(Utente utente) {
-		// TODO Auto-generated method stub
-
+		utenteDao.delete(utente);
 	}
 
 }

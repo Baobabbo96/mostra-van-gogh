@@ -6,7 +6,7 @@ import it.corso.model.Utente;
 
 public interface UtenteService {
 
-	void registraUtente(Utente utente, Object... dati);
+	void registraUtente(Utente utente);
 	Utente getUtenteById(int id);
 	List<Utente> getUtenti();
 	void cancellaUtente(Utente utente);

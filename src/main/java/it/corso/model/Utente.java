@@ -27,6 +27,9 @@ public class Utente {
 	@Column(name = "cognome")
 	private String cognome;
 	
+	@Column(name = "email")
+	private String email;
+	
 	@Column(name = "indirizzo")
 	private String indirizzo;
 	
@@ -52,6 +55,13 @@ public class Utente {
 		orphanRemoval = true
 			)
 	private List<Ordine> ordini = new ArrayList<>();
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public int getId() {
 		return id;
