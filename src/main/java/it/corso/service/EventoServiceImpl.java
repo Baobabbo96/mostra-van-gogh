@@ -25,7 +25,7 @@ public class EventoServiceImpl implements EventoService {
 	}
 
 	@Override
-	public void deleateEvento(Evento evento) {
+	public void cancellaEvento(Evento evento) {
 		// TODO Auto-generated method stub
 
 	}

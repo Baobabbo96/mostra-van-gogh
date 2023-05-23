@@ -7,7 +7,7 @@ import it.corso.model.Opera;
 public class OperaServiceImpl implements OperaService {
 
 	@Override
-	public void registraOpera(Opera opera) {
+	public void registraOpera(Opera opera, Object... dati) {
 		// TODO Auto-generated method stub
 
 	}
@@ -25,7 +25,7 @@ public class OperaServiceImpl implements OperaService {
 	}
 
 	@Override
-	public void deleateOpera(Opera opera) {
+	public void cancellaOpera(Opera opera) {
 		// TODO Auto-generated method stub
 
 	}

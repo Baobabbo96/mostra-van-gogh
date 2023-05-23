@@ -7,7 +7,7 @@ import it.corso.model.Utente;
 public class UtenteServiceImpl implements UtenteService {
 
 	@Override
-	public void registraUtente(Utente utente, String... dati) {
+	public void registraUtente(Utente utente, Object... dati) {
 		// TODO Auto-generated method stub
 
 	}

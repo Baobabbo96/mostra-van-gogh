@@ -25,7 +25,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void eliminaAdmin(Admin admin) {
+	public void cancellaAdmin(Admin admin) {
 		// TODO Auto-generated method stub
 		
 	}

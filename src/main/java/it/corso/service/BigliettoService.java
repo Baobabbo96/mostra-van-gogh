@@ -10,5 +10,5 @@ public interface BigliettoService {
 	void registraBiglietto(Biglietto biglietto);
 	Biglietto getABigliettoById(int id);
 	List<Biglietto> getBiglietto();
-	void eliminaBiglietto(Biglietto biglietto);
+	void cancellaBiglietto(Biglietto biglietto);
 }

@@ -5,8 +5,8 @@ import it.corso.model.Evento;
 
 public interface EventoService 
 {
-	void registraEvento(Evento evento);
+	void registraEvento(Evento evento);// si puo togliere
 	Evento getEventoById(int id);
 	List<Evento> getEventi();
-	void deleateEvento(Evento evento);
+	void cancellaEvento(Evento evento);
 }
