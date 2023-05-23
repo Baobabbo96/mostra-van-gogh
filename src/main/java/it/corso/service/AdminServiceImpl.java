@@ -7,7 +7,7 @@ import it.corso.model.Admin;
 public class AdminServiceImpl implements AdminService {
 
 	@Override
-	public void registraAdmin(Object... Admin) {
+	public void registraAdmin(Object... dati) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -25,7 +25,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void eliminaAdmin(Object... Admin) {
+	public void eliminaAdmin(Admin admin) {
 		// TODO Auto-generated method stub
 		
 	}

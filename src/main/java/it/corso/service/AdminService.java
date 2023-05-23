@@ -8,8 +8,8 @@ import it.corso.model.Admin;
 public interface AdminService {
 
 	
-	void registraAdmin(Object...Admin);
+	void registraAdmin(Object... dati);// non utile, si potrà eliminare.
 	Admin getAdminById(int id);
 	List<Admin> getAdmin();
-	void eliminaAdmin(Object...Admin);
+	void eliminaAdmin(Admin admin);
 }
