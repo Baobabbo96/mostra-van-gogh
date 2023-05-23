@@ -22,6 +22,8 @@ public class LoginAdminController {
 	public String getPage(
 			Model model,
 			HttpSession session) {
+		if(session.getAttribute("admin") != null)
+			return "redirect:/reservedadmin";
 		return "login_admin";
 	}
 	

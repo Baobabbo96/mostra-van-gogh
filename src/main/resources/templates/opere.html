@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+	<h1>Registra Opera</h1>
+		<form th:object="${utente}" method="post">
+			<input type="text" th:field="*{titolo}"><br>
+			<input type="text" th:field="*{descrizione}"><br>
+			<input type="file" th:field="*{immagine}"><br>
+			<input type="text" th:field="*{tecnica}"><br>
+			<input type="number" th:field="*{prezzoStampa}"><br>
+			<input type="text" th:field="*{anno}"><br>
+			<input type="submit" value="Registrati">
+		</form>
+	</body>
+</html>

@@ -5,7 +5,7 @@ import it.corso.model.Opera;
 
 public interface OperaService 
 {
-	void registraOpera(Opera opera, Object... dati);
+	void registraOpera(Opera opera);
 	Opera getOperaById(int id);
 	List<Opera> getOpere();
 	void cancellaOpera(Opera opera);	

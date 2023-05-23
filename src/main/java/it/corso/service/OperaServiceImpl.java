@@ -2,17 +2,21 @@ package it.corso.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.corso.dao.OperaDao;
 import it.corso.model.Opera;
 
 @Service
 public class OperaServiceImpl implements OperaService {
 
+	@Autowired
+	private OperaDao operaDao;
+	
 	@Override
-	public void registraOpera(Opera opera, Object... dati) {
-		// TODO Auto-generated method stub
-
+	public void registraOpera(Opera opera) {
+		operaDao.save(opera);
 	}
 
 	@Override
