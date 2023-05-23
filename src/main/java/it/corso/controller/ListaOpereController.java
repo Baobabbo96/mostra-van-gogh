@@ -25,10 +25,11 @@ public class ListaOpereController {
 	public String getPage(
 			HttpSession session, 
 			Model model) {
-		if(session.getAttribute("utente")== null || session.getAttribute("admin")== null ) 
-			return "redirect:/home";
-		model.addAttribute("opere",operaService.getOpere());
-		return "lista_opere";
+		if(session.getAttribute("utente") != null || session.getAttribute("admin") != null ) {
+			model.addAttribute("opere",operaService.getOpere());
+			return "lista_opere";
+		}
+		return "redirect:/home";
 	}
 	
 }

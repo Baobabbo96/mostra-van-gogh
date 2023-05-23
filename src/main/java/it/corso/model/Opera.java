@@ -38,7 +38,7 @@ public class Opera {
 	@Column(name = "prezzo_stampa")
 	private double prezzoStampa;
 	
-	@Column(name="anno")
+	@Column(name="anno_realizzazione")
 	private String anno;
 	
 	@ManyToMany(cascade = CascadeType.REFRESH,fetch = FetchType.EAGER)
