@@ -6,4 +6,5 @@ import it.corso.model.Admin;
 
 public interface AdminDao extends CrudRepository<Admin, Integer>{
 
+	Admin findByUsernameAndPassword(String username, String password);
 }
