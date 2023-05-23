@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import it.corso.dao.UtenteDao;
 import it.corso.model.Utente;
+import jakarta.servlet.http.HttpSession;
 
 @Service
 public class UtenteServiceImpl implements UtenteService {
@@ -34,4 +35,12 @@ public class UtenteServiceImpl implements UtenteService {
 		utenteDao.delete(utente);
 	}
 
+	@Override
+	public boolean controlloLogin(HttpSession session, String... credenziali) {
+		Utente utente = utenteDao.findByUsernameAndPassword(credenziali[0], credenziali[1]);
+		if(utente == null)
+			return false;
+		session.setAttribute("utente", utente);
+		return true;
+	}
 }
