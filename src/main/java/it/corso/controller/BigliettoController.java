@@ -28,7 +28,8 @@ public class BigliettoController {
 	
 	
 	@GetMapping
-	public String getPage(Model model) {	
+	public String getPage(Model model) 
+	{	
 		List<Evento> eventi= eventoService.getEventi();
 		model.addAttribute("eventi", eventi);
 		
@@ -37,11 +38,10 @@ public class BigliettoController {
 	
 	@PostMapping
 	public String compraBiglietto(
-			
 			@RequestParam("dataIngresso") String dataIngresso,
-			@RequestParam("idEvento") int  idEvento,
-			HttpSession session){
-	
+			@RequestParam("idEvento") int idEvento,
+			HttpSession session)
+	{
 		Utente utente= (Utente) session.getAttribute("utente");
 		int idUtente= utente.getId();
 		bigliettoService.registraBiglietto(dataIngresso,idUtente,idEvento);

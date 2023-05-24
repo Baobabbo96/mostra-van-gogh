@@ -23,7 +23,7 @@ public class EventoServiceImpl implements EventoService {
 	@Override
 	public Evento getEventoById(int id) {
 		
-		return null;
+		return eventoDao.findById(id).get();
 	}
 
 	@Override

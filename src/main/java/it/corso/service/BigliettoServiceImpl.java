@@ -19,10 +19,10 @@ public class BigliettoServiceImpl implements BigliettoService {
 	
 	
 	@Autowired
-	private UtenteDao utenteDao;
+	private UtenteService utenteService;
 	
 	@Autowired
-	private EventoDao eventoDao;
+	private EventoService eventoService;
 	
 	
 	@Override
@@ -36,8 +36,8 @@ public class BigliettoServiceImpl implements BigliettoService {
 		biglietto.setPrezzo(20.90);
 		biglietto.setDataAcquisto(LocalDate.now());
 		biglietto.setDataIngresso(LocalDate.parse(data));
-		biglietto.setUtente(utenteDao.findById(idUtente).get());
-		biglietto.setEvento(eventoDao.findById(idEvento).get());
+		biglietto.setUtente(utenteService.getUtenteById(idUtente));
+		biglietto.setEvento(eventoService.getEventoById(idEvento));
 		
 		bigliettoDao.save(biglietto);
 		
