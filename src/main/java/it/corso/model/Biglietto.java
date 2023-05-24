@@ -25,7 +25,7 @@ public class Biglietto {
 	@Column(name="data_acquisto")
 	private LocalDate dataAcquisto;
 	
-	@Column(name="deta_ingresso")
+	@Column(name="data_ingresso")
 	private LocalDate dataIngresso;
 	
 	@Column(name="prezzo")

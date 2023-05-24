@@ -2,13 +2,18 @@ package it.corso.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.corso.dao.EventoDao;
 import it.corso.model.Evento;
 
 @Service
 public class EventoServiceImpl implements EventoService {
 
+	@Autowired
+	private EventoDao eventoDao;
+	
 	@Override
 	public void registraEvento(Evento evento) {
 		// TODO Auto-generated method stub
@@ -17,14 +22,13 @@ public class EventoServiceImpl implements EventoService {
 
 	@Override
 	public Evento getEventoById(int id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public List<Evento> getEventi() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<Evento>) eventoDao.findAll();
 	}
 
 	@Override

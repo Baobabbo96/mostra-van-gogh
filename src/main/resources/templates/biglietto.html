@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pagina Biglietto</title>
+</head>
+
+<body>
+
+	<h1>Biglietto</h1>
+	<form method="post">
+		<input type="date" placeholder="data Ingresso" name="dataIngresso"><br>
+		<select name="eventi">
+			<option th:each="e : ${eventi}" th:value="${e.id}" th:text="${e.descrizione}"></option>
+		</select>
+
+		<input type="submit" value="Registrati">
+	</form>
+
+
+</body>
+
+</html>

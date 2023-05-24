@@ -7,7 +7,7 @@ import it.corso.model.Biglietto;
 
 public interface BigliettoService {
 
-	void registraBiglietto(Biglietto biglietto);
+	void registraBiglietto( Object...dati);
 	Biglietto getABigliettoById(int id);
 	List<Biglietto> getBiglietto();
 	void cancellaBiglietto(Biglietto biglietto);
