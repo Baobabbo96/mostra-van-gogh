@@ -43,7 +43,7 @@ public class OrdineController
 	@PostMapping
 	public String registraOrdine(Model model,
 			HttpSession session,
-			@RequestParam(name = "idOpere", required = false) int[] idOpere) 
+			@RequestParam(name = "opere", required = false) int[] idOpere) 
 	{
 		if (idOpere == null) {
 			return "redirect:/ordine";
@@ -52,6 +52,6 @@ public class OrdineController
 		Utente utente = (Utente) session.getAttribute("utente");
 		int idUtente = utente.getId();
 		ordineService.registraOrdine(ordine, idUtente, idOpere);
-		return "";
+		return "redirect:/home";
 	}
 }
