@@ -12,7 +12,8 @@ import it.corso.dao.OperaDao;
 import it.corso.model.Opera;
 
 @Service
-public class OperaServiceImpl implements OperaService {
+public class OperaServiceImpl implements OperaService 
+{
 
 	@Autowired
 	private OperaDao operaDao;
@@ -47,20 +48,21 @@ public class OperaServiceImpl implements OperaService {
 	}
 
 	@Override
-	public Opera getOperaById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Opera getOperaById(int id) 
+	{
+		return operaDao.findById(id).get();
 	}
 
 	@Override
-	public List<Opera> getOpere() {
+	public List<Opera> getOpere() 
+	{
 		return (List<Opera>) operaDao.findAll();
 	}
 
 	@Override
-	public void cancellaOpera(Opera opera) {
-		// TODO Auto-generated method stub
-
+	public void cancellaOpera(Opera opera)
+	{
+		operaDao.delete(opera);
 	}
 
 }

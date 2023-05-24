@@ -17,6 +17,7 @@
 				<td > 
 				<img th:src="@{${o.immagine}}"></img>
 				</td>
+				<td><a th:href="@{opere/cancella(id=${o.id})}">Distruggi opera definitivamente</a></td>
 			</tr>
 		</table>
 		<a th:href="@{/registraopere}">Aggiungi opera</a>

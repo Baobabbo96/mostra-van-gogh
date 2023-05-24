@@ -10,6 +10,7 @@ import it.corso.dao.BigliettoDao;
 import it.corso.dao.EventoDao;
 import it.corso.dao.UtenteDao;
 import it.corso.model.Biglietto;
+import it.corso.model.Evento;
 
 @Service
 public class BigliettoServiceImpl implements BigliettoService {
@@ -26,8 +27,8 @@ public class BigliettoServiceImpl implements BigliettoService {
 	
 	
 	@Override
-	public void registraBiglietto(
-			Object...dati) {
+	public void registraBiglietto(Object...dati) 
+	{
 		Biglietto biglietto= new Biglietto();
 		String data = (String) dati[0];
 		int idUtente = (int) dati[1];
@@ -37,7 +38,11 @@ public class BigliettoServiceImpl implements BigliettoService {
 		biglietto.setDataAcquisto(LocalDate.now());
 		biglietto.setDataIngresso(LocalDate.parse(data));
 		biglietto.setUtente(utenteService.getUtenteById(idUtente));
-		biglietto.setEvento(eventoService.getEventoById(idEvento));
+		Evento evento = eventoService.getEventoById(idEvento);
+		biglietto.setEvento(evento);
+		for (int i = 0; i < evento.getBiglietti().size(); i++) {
+			System.out.println(evento.getBiglietti().get(i).getUtente().getUsername());
+		}
 		
 		bigliettoDao.save(biglietto);
 		
@@ -45,17 +50,17 @@ public class BigliettoServiceImpl implements BigliettoService {
 
 	@Override
 	public Biglietto getABigliettoById(int id) {
-		return null;
+		return bigliettoDao.findById(id).get();
 	}
 
 	@Override
 	public List<Biglietto> getBiglietto() {
-		return null;
+		return (List<Biglietto>) bigliettoDao.findAll();
 	}
 
 	@Override
 	public void cancellaBiglietto(Biglietto biglietto) {
-
+		bigliettoDao.delete(biglietto);
 	}
 
 }

@@ -33,8 +33,7 @@ public class EventoServiceImpl implements EventoService {
 
 	@Override
 	public void cancellaEvento(Evento evento) {
-		// TODO Auto-generated method stub
-
+		eventoDao.delete(evento);
 	}
 
 }

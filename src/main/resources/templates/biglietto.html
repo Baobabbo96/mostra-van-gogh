@@ -11,7 +11,7 @@
 	<h1>Biglietto</h1>
 	<form method="post">
 		<input type="date" placeholder="data Ingresso" name="dataIngresso"><br>
-		<select name="eventi">
+		<select name="idEvento">
 			<option th:each="e : ${eventi}" th:value="${e.id}" th:text="${e.descrizione}"></option>
 		</select>
 
