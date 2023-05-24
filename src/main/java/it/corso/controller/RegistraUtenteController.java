@@ -12,28 +12,24 @@ import it.corso.model.Utente;
 import it.corso.service.UtenteService;
 
 @Controller
-@RequestMapping("/")
-public class UtenteController {
+@RequestMapping("/registrazione")
+public class RegistraUtenteController {
 
 	@Autowired
 	private UtenteService utenteService;
 	
-	@PostMapping("/utente")
+	@PostMapping
 	public String registrazione(@ModelAttribute("utente") Utente utente) {
 		utenteService.registraUtente(utente);
-		return "redirect:/list";
+		return "redirect:/home";
 	}
 	
-	@GetMapping("/utente")
-	public String getForm(Model model) {
+	@GetMapping
+	public String getPage(Model model) {
 		Utente utente = new Utente();
 		model.addAttribute("utente", utente);
 		return "registrazione";
 	}
 	
-	@GetMapping("/list")
-	public String getPage(Model model) {
-		model.addAttribute("utenti", utenteService.getUtenti());
-		return "index";
-	}
+
 }

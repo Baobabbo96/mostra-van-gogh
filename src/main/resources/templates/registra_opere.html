@@ -6,13 +6,13 @@
 	</head>
 	<body>
 	<h1>Registra Opera</h1>
-		<form th:object="${opera}" method="post" >
-			<input type="text" th:field="*{titolo}"><br>
-			<input type="text" th:field="*{descrizione}"><br>
-			<input type="file" th:field="*{immagine}"><br>
-			<input type="text" th:field="*{tecnica}"><br>
-			<input type="number" th:field="*{prezzoStampa}"><br>
-			<input type="text" th:field="*{anno}"><br>
+		<form  method="post" enctype="multipart/form-data">
+			<input type="text" placeholder="titolo" name="titolo"><br>
+			<input type="text" placeholder="descrizione" name="descrizione"><br>
+			<input type="file" placeholder="immagine" name="immagine"><br>
+			<input type="text" placeholder="tecnica" name="tecnica"><br>
+			<input type="number" placeholder="prezzo Stampa" name="prezzoStampa"><br>
+			<input type="text" placeholder="anno" name="anno"><br>
 			<input type="submit" value="Registrati">
 		</form>
 		

@@ -6,15 +6,15 @@
 	</head>
 	<body>
 		<form th:object="${utente}" method="post">
-			<input type="text" th:field="*{nome}"><br>
-			<input type="text" th:field="*{cognome}"><br>
-			<input type="text" th:field="*{username}"><br>
-			<input type="text" th:field="*{password}"><br>
-			<input type="text" th:field="*{email}"><br>
-			<input type="text" th:field="*{indirizzo}"><br>
-			<input type="text" th:field="*{comune}"><br>
-			<input type="text" th:field="*{provincia}"><br>
-			<input type="text" th:field="*{cap}"><br>
+			<input type="text" th:field="*{nome}" placeholder="nome"><br>
+			<input type="text" th:field="*{cognome}" placeholder="cognome"><br>
+			<input type="text" th:field="*{username}" placeholder="username"><br>
+			<input type="text" th:field="*{password}" placeholder="password"><br>
+			<input type="text" th:field="*{email}" placeholder="email"><br>
+			<input type="text" th:field="*{indirizzo}" placeholder="indirizzo"><br>
+			<input type="text" th:field="*{comune}" placeholder="comune"><br>
+			<input type="text" th:field="*{provincia}" placeholder="provincia"><br>
+			<input type="text" th:field="*{cap}" placeholder="cap"><br>
 			<input type="submit" value="Registrati">
 		</form>
 	</body>
