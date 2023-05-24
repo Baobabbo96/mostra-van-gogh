@@ -35,14 +35,15 @@ public class OperaServiceImpl implements OperaService {
 				e.printStackTrace();
 			}
 		}
+		
 		String tecnica = (String) dati[3];
 		opera.setTecnica(tecnica);
 		double prezzoStampa = (double) dati[4];
 		opera.setPrezzoStampa(prezzoStampa);
 		String anno = (String) dati[5];
 		opera.setAnno(anno);
-		operaDao.save(opera);
 		
+		operaDao.save(opera);
 	}
 
 	@Override
