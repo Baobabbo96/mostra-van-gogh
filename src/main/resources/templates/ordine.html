@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>form ordine</h1>
+		<label th:text="'Opere:'"></label>
+		<div th:each="o : ${opere}">
+			<input type="checkbox" name="opere" th:value="${o.id}">
+			<label th:text="${o.titolo}"></label>
+		</div>
+	</body>
+</html>
