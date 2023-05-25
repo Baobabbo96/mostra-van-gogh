@@ -2,9 +2,6 @@ package it.corso.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.springframework.data.repository.query.Param;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,9 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.Pattern;
+
 
 @Entity
 @Table(name = "opere")
@@ -29,27 +24,21 @@ public class Opera {
 	private int id;
 	
 	@Column(name = "titolo")
-	@Pattern(regexp = "[a-sA-Z0-9\\s']{1,50}", message = "Caratteri non Ammessi")
 	private String titolo;
 	
 	@Column(name = "descrizione")
-	@Pattern(regexp = "[a-sA-Z0-9\\s']{1,255}", message = "Caratteri non Ammessi")
 	private String descrizione;
 	
 	@Column(name = "immagine")
 	private String immagine;
 	
 	@Column(name = "tecnica")
-	@Pattern(regexp = "[a-sA-Z\\s']{1,50}", message = "Caratteri non Ammessi")
 	private String tecnica;
 	
 	@Column(name = "prezzo_stampa")
-	@Min(value = 1, message = "Valore troppo Basso")
-	@Max(value = 120, message = "Valore troppo Alto")
 	private double prezzoStampa;
 	
 	@Column(name="anno_realizzazione")
-	@Pattern(regexp = "[0-9]{1,4}", message = "Caratteri non Ammessi")
 	private String anno;
 	
 	@ManyToMany(cascade = CascadeType.REFRESH,fetch = FetchType.EAGER)

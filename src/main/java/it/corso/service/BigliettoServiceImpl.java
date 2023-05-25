@@ -2,13 +2,9 @@ package it.corso.service;
 
 import java.time.LocalDate;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import it.corso.dao.BigliettoDao;
-import it.corso.dao.EventoDao;
-import it.corso.dao.UtenteDao;
 import it.corso.model.Biglietto;
 import it.corso.model.Evento;
 

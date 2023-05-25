@@ -3,15 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script th:src="@{ordine.js}" type="text/javascript"></script>
 	</head>
 	<body>
 		<h1>form ordine</h1>
 		<form method="post" >
 			<label th:text="'Opere:'"></label>
 			<div th:each="o : ${opere}">
-				<input type="checkbox" name="opere" th:value="${o.id}">
+				<input class="check" type="checkbox" th:price="${o.prezzoStampa}" name="opere" th:value="${o.id}">
 				<label th:text="${o.titolo}"></label>
 			</div>
+			<p id="importo">IMPORTO: 0.00€</p>
 			<input type="submit" value="compra">
 		</form>
 	</body>
