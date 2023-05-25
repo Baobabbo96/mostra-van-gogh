@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			table, th, td {
+				border: 1px solid;
+			}
+			th, td {
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>Id Ordine</th>
+				<th>Utente</th>
+				<th>Data</th>
+				<th>Totale</th>
+			</tr>
+			<tr th:each="o : ${ordini}">
+				<td th:text="${o.id}"></td>
+				<td th:text="${o.utente.username}"></td>
+				<td th:text="${o.data}"></td>
+				<td th:text="${o.importo} + '€'"></td>
+			</tr>	
+		</table>
+		<a th:href="@{/home}">Torna alla pagina principale</a>
+	</body>
+</html>
