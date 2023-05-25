@@ -21,11 +21,14 @@ public class ListaOpereController {
 	public String getPage(
 			HttpSession session, 
 			Model model) {
-		if(session.getAttribute("admin") != null || session.getAttribute("utente") != null  ) {
-			model.addAttribute("opere",operaService.getOpere());
-			return "lista_opere";
+		boolean isAdmin = false;
+		if (session.getAttribute("admin") != null) {
+			isAdmin=true;
 		}
-		return "redirect:/home";
+		model.addAttribute("isAdmin", isAdmin);
+		model.addAttribute("opere",operaService.getOpere());
+		return "lista_opere";
+	
 	}
 	
 	@GetMapping("/cancella")

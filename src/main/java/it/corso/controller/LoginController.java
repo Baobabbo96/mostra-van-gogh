@@ -22,7 +22,8 @@ public class LoginController {
 	public String getPage(
 			Model model,
 			HttpSession session,
-			@RequestParam(name = "le", required = false) String logError) {
+			@RequestParam(name = "le", required = false) String logError) 
+	{
 		model.addAttribute("logError", logError != null);
 		return "login";
 	}

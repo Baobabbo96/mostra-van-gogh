@@ -28,12 +28,15 @@ public class BigliettoController {
 	
 	
 	@GetMapping
-	public String getPage(Model model) 
+	public String getPage(Model model, HttpSession session) 
 	{	
-		List<Evento> eventi= eventoService.getEventi();
-		model.addAttribute("eventi", eventi);
-		
-		return "biglietto";
+		if  (session.getAttribute("utente") != null) 
+		{
+			List<Evento> eventi= eventoService.getEventi();
+			model.addAttribute("eventi", eventi);	
+			return "biglietto";
+		}
+		return "redirect:/forbidden";
 	}
 	
 	@PostMapping

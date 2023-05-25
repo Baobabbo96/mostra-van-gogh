@@ -8,7 +8,12 @@
 		<table>
 			<tr th:each="u : ${utenti}">
 				<td th:text="${u.nome}"></td>
-				<td th:text="${u.cognome}"></td>
+				<td th:text="${u.username}"></td>
+				<td th:text="${u.email}"></td>
+				<td th:text="${u.indirizzo}"></td>
+				<td th:text="${u.comune}"></td>
+				<td th:text="${u.provincia}"></td>
+				<td th:text="${u.cap}"></td>
 			</tr>
 		</table>
 	</body>

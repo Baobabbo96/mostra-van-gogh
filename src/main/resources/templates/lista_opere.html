@@ -17,10 +17,10 @@
 				<td > 
 				<a th:href="@{dettaglio-opera(id=${o.id})}"><img th:src="@{${o.immagine}}"></img></a>
 				</td>
-				<td><a th:href="@{opere/cancella(id=${o.id})}">Distruggi opera definitivamente</a></td>
+				<td th:if="${isAdmin}"><a th:href="@{opere/cancella(id=${o.id})}">Distruggi opera definitivamente</a></td>
 			</tr>
 		</table>
-		<a th:href="@{/registraopere}">Aggiungi opera</a>
+		<a th:if="${isAdmin}" th:href="@{/registraopere}">Aggiungi opera</a>
 </body>
 
 </html>

@@ -6,24 +6,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import it.corso.service.UtenteService;
+import it.corso.service.BigliettoService;
 import jakarta.servlet.http.HttpSession;
-import jakarta.websocket.Session;
 
 @Controller
-@RequestMapping("/list")
-public class ListaUtenteController {
-
+@RequestMapping("lista-biglietti")
+public class ListaBigliettiController 
+{
 	@Autowired
-	private UtenteService utenteService;
+	private BigliettoService bigliettoService;
 	
 	@GetMapping
 	public String getPage(Model model,HttpSession session) 
 	{
-		if (session.getAttribute("admin") != null) 
-		{
-			model.addAttribute("utenti", utenteService.getUtenti());
-			return "index";
+		if (session.getAttribute("admin") != null) {
+			model.addAttribute("biglietti", bigliettoService.getBiglietto());
+			return "lista_biglietti";
 		}
 		return "redirect:/home";
 	}

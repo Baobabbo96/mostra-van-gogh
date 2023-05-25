@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<table>
+			<tr th:each="b : ${biglietti}">
+				<td th:text="${b.utente.username}"></td>
+				<td th:text="${b.dataAcquisto}"></td>
+				<td th:text="${b.dataIngresso}"></td>
+				<td th:text="${b.evento.descrizione}"></td>
+			</tr>
+		</table>
+	</body>
+</html>

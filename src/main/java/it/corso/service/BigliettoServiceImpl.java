@@ -36,10 +36,6 @@ public class BigliettoServiceImpl implements BigliettoService {
 		biglietto.setUtente(utenteService.getUtenteById(idUtente));
 		Evento evento = eventoService.getEventoById(idEvento);
 		biglietto.setEvento(evento);
-		for (int i = 0; i < evento.getBiglietti().size(); i++) {
-			System.out.println(evento.getBiglietti().get(i).getUtente().getUsername());
-		}
-		
 		bigliettoDao.save(biglietto);
 		
 	}
