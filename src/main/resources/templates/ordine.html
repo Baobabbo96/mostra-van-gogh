@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<script th:src="@{ordine.js}" type="text/javascript"></script>
+		
 	</head>
 	<body>
 		<h1>form ordine</h1>
@@ -16,5 +16,22 @@
 			<p id="importo">IMPORTO: 0.00€</p>
 			<input type="submit" value="compra">
 		</form>
+		
+		
+		<script type="text/javascript">
+			let importo = 0;
+			const check = document.querySelectorAll('.check');
+			check.forEach(c => {
+				c.addEventListener('change',() => {
+					const prezzo = parseFloat(c.getAttribute('price'));
+					if (c.checked) {
+						importo += prezzo;
+					} else {
+						importo -= prezzo;
+					}
+					document.getElementById("importo").innerHTML = 'IMPORTO: ' + importo + '€';
+				})
+			})
+		</script>
 	</body>
 </html>
