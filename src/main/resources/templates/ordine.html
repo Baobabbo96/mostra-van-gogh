@@ -3,35 +3,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		
 	</head>
 	<body>
 		<h1>form ordine</h1>
-		<form method="post" >
+		<form method="post">
 			<label th:text="'Opere:'"></label>
 			<div th:each="o : ${opere}">
 				<input class="check" type="checkbox" th:price="${o.prezzoStampa}" name="opere" th:value="${o.id}">
-				<label th:text="${o.titolo}"></label>
+				<label th:text="${o.titolo} + ' - ' + ${o.prezzoStampa} + '€'"></label>
 			</div>
 			<p id="importo">IMPORTO: 0.00€</p>
 			<input type="submit" value="compra">
 		</form>
-		
-		
-		<script type="text/javascript">
-			let importo = 0;
-			const check = document.querySelectorAll('.check');
-			check.forEach(c => {
-				c.addEventListener('change',() => {
-					const prezzo = parseFloat(c.getAttribute('price'));
-					if (c.checked) {
-						importo += prezzo;
-					} else {
-						importo -= prezzo;
-					}
-					document.getElementById("importo").innerHTML = 'IMPORTO: ' + importo + '€';
-				})
-			})
-		</script>
+		<script type="text/javascript" src="/js/ordine.js"></script>
 	</body>
 </html>

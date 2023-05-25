@@ -1,7 +1,3 @@
-/**
- * funzione che mostra l'importo di un ordine in modo dinamico.
- */
-
 let importo = 0;
 const check = document.querySelectorAll('.check');
 check.forEach(c => {
