@@ -2,6 +2,7 @@ package it.corso.model;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,25 +23,25 @@ public class Opera {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column(name = "titolo")
 	private String titolo;
-	
+
 	@Column(name = "descrizione")
 	private String descrizione;
-	
+
 	@Column(name = "immagine")
 	private String immagine;
-	
+
 	@Column(name = "tecnica")
 	private String tecnica;
-	
+
 	@Column(name = "prezzo_stampa")
 	private double prezzoStampa;
-	
+
 	@Column(name="anno_realizzazione")
 	private String anno;
-	
+
 	@ManyToMany(cascade = CascadeType.REFRESH,fetch = FetchType.EAGER)
 	@JoinTable(
 		name = "carrello",
@@ -48,8 +49,8 @@ public class Opera {
 		inverseJoinColumns = @JoinColumn(name = "id_ordine", referencedColumnName = "id")
 			)
 	private List<Ordine> ordini = new ArrayList<>();
-	
-	
+
+
 	public int getId() {
 		return id;
 	}
@@ -98,6 +99,6 @@ public class Opera {
 	public void setOrdini(List<Ordine> ordini) {
 		this.ordini = ordini;
 	}
-	
-	
+
+
 }
