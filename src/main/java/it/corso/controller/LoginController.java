@@ -21,7 +21,9 @@ public class LoginController {
 	@GetMapping
 	public String getPage(
 			Model model,
-			HttpSession session) {
+			HttpSession session,
+			@RequestParam(name = "le", required = false) String logError) {
+		model.addAttribute("logError", logError != null);
 		return "login";
 	}
 	
@@ -32,6 +34,6 @@ public class LoginController {
 			HttpSession session) {
 		if (utenteService.controlloLogin(session, username, password))
 			return "redirect:/reserved";
-		return "redirect:/login";
+		return "redirect:/login?le";
 	}
 }

@@ -21,9 +21,11 @@ public class LoginAdminController {
 	@GetMapping
 	public String getPage(
 			Model model,
-			HttpSession session) {
+			HttpSession session,
+			@RequestParam(name = "le", required = false) String logError) {
 		if(session.getAttribute("admin") != null)
 			return "redirect:/reservedadmin";
+		model.addAttribute("logError", logError != null);
 		return "login_admin";
 	}
 	
@@ -34,6 +36,6 @@ public class LoginAdminController {
 			HttpSession session) {
 		if (adminService.controlloLogin(session, username, password))
 			return "redirect:/reservedadmin";
-		return "redirect:/admin";
+		return "redirect:/admin?le";
 	}
 }

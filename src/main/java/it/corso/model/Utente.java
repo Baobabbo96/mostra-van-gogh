@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "utenti")
@@ -22,30 +23,38 @@ public class Utente {
 	private int id;
 	
 	@Column(name = "nome")
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi")
 	private String nome;
 	
 	@Column(name = "cognome")
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi")
 	private String cognome;
 	
 	@Column(name = "email")
 	private String email;
 	
 	@Column(name = "indirizzo")
+	@Pattern(regexp = "[a-zA-Z\\s'0-9]{1,150}", message = "Caratteri non ammessi")
 	private String indirizzo;
 	
 	@Column(name = "comune")
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi")
 	private String comune;
 	
 	@Column(name = "provincia")
+	@Pattern(regexp = "[a-zA-Z]{2}", message = "Caratteri non ammessi")
 	private String provincia;
 	
 	@Column(name = "cap")
+	@Pattern(regexp = "[0-9]{5}", message = "Caratteri non ammessi")
 	private String cap;
 	
 	@Column(name = "username")
+	@Pattern(regexp = "[a-zA-Z.]{1,20}", message = "Username non valido")
 	private String username;
 	
 	@Column(name = "password")
+	@Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,20}", message = "Password troppo debole")
 	private String password;
 	
 	@OneToMany(
