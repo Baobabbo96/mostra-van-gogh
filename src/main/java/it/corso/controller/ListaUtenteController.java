@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.corso.service.UtenteService;
 import jakarta.servlet.http.HttpSession;
-import jakarta.websocket.Session;
 
 @Controller
 @RequestMapping("/list")
