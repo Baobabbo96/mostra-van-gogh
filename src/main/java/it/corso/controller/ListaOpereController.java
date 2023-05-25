@@ -21,7 +21,7 @@ public class ListaOpereController {
 	public String getPage(
 			HttpSession session, 
 			Model model) {
-		if(session.getAttribute("admin") != null ) {
+		if(session.getAttribute("admin") != null || session.getAttribute("utente") != null  ) {
 			model.addAttribute("opere",operaService.getOpere());
 			return "lista_opere";
 		}

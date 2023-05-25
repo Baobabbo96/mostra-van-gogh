@@ -15,7 +15,7 @@
 				<td th:text="${o.anno}"></td>
 				<td th:text="${o.prezzoStampa}"></td>
 				<td > 
-				<img th:src="@{${o.immagine}}"></img>
+				<a th:href="@{dettaglio-opera(id=${o.id})}"><img th:src="@{${o.immagine}}"></img></a>
 				</td>
 				<td><a th:href="@{opere/cancella(id=${o.id})}">Distruggi opera definitivamente</a></td>
 			</tr>
