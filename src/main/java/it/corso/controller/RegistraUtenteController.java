@@ -25,7 +25,7 @@ public class RegistraUtenteController {
 			@Valid@ModelAttribute("utente") Utente utente,
 			BindingResult result) {
 		if (result.hasErrors())
-			return "registrazione";
+			return "Register";
 		utenteService.registraUtente(utente);
 		return "redirect:/home";
 	}
@@ -34,7 +34,7 @@ public class RegistraUtenteController {
 	public String getPage(Model model) {
 		Utente utente = new Utente();
 		model.addAttribute("utente", utente);
-		return "registrazione";
+		return "Register";
 	}
 	
 
