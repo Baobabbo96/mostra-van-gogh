@@ -1,0 +1,631 @@
+<!-- <!DOCTYPE html> -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
+
+  <style type="text/css">
+    
+  @import url('https://fonts.cdnfonts.com/css/gotham-rounded-ssm');
+  
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Navbar fissa in alto */
+.navbar {
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* Posizionamento pulsante */
+.navbar-toggle {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  margin-right: 3%;
+}
+
+#dimLogo img{
+  height: 15%;
+  width: 20%;
+}
+/* ridimensionamento bottone */
+#menubutton {
+  height: 6%;
+  width: 15%;
+  display: flex;
+  margin-left: 10%;
+  padding-right: -100%;
+  
+}
+
+#logoHome{
+text-align: center;
+padding: 0.5%;
+}
+
+/* Pulsante menù */
+.menu-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Posizionamento del menù a sinistra */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.952);
+  background-size:cover;
+  transition: left 0.3s ease;
+}
+
+/* regolazione menù laterale */
+.menu {
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
+}
+
+/* distanziamento lista */
+.menu li {
+  padding: 10px;
+  margin-bottom: 7%;
+  margin-left: 4%;
+}
+
+/* cambio colore collegamenti ipertestuali */
+.menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+ 
+}
+
+.catafratto{
+  text-decoration: none;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Movimento sidebar */
+.sidebar-open {
+  left: 0;
+}
+
+.blurry-brush-button-1:hover,
+.blurry-brush-button-1:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em #ffffff;
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.25em);
+    border-color: #ffffff;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.blurry-brush-button-1 {
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    color: #ffffff;
+    border-radius: 25px;
+}
+
+.blurry-brush-button-2:hover,
+.blurry-brush-button-2:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em #ceca00;
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.25em);
+    border-color: #f1ee0e;
+    color: #ffe600;
+    border-radius: 50px;
+}
+
+.blurry-brush-button-2 {
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    color: #f1ee0e;
+    border-radius: 25px;
+}
+
+.catafratti{
+  text-decoration: none;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+@media (max-width: 768px) {
+  /* Stili specifici per schermi con larghezza massima di 768px */
+  
+  .navbar-toggle {
+    margin-right: 0;
+    margin-left: 10px; /* Muove il pulsante del menu a sinistra */
+  }
+
+  .blurry-brush-button-1,
+  .blurry-brush-button-2 {
+    font-size: 12px; /* Riduce la dimensione dei bottoni login e biglietteria */
+    padding: 0.75em 1.5em; /* Riduce il padding del bottone */
+  }
+
+  #dimLogo img {
+    height: 40px;
+    width: auto;
+  }
+
+  #menubutton {
+    height: 16px;
+    width: auto;
+  }
+
+  #logoHome {
+    display: block;
+    margin: auto;
+  }
+
+  .sidebar {
+    left: -100%;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar-open {
+    left: 0;
+  }
+}
+
+                           
+    h1 {
+      color: rgb(255, 255, 255);
+      margin-left: 5%;
+      font-size: 75px;
+      margin-bottom: -3%;
+      font-family: 'Gotham Rounded SSm', sans-serif;
+    }
+
+    .primo {
+      background-image: url(image/ritratto2.jpg);
+      padding-bottom: 5%;
+    }
+
+    body {
+      margin: auto;
+      font-family: 'Gotham Rounded SSm', sans-serif;
+                                                
+    }
+
+    #anno1 {
+      padding-bottom: 10%;
+      margin-bottom: 0%;
+      font-weight: 400;
+      font-family: 'Gotham Rounded SSm', sans-serif;
+
+    }
+
+    .secondo {
+      background-color: rgb(149, 208, 169)
+    }
+
+    #anno2 {
+      color: black;
+      margin-left: 30%;
+      margin-bottom: 0%;
+      font-weight: 400;
+      padding-top: 4%;
+    }
+
+    #paragrafo1 {
+      margin-top: 1%;
+      padding-bottom: 9%;
+      line-height: 1.5em; 
+    }
+
+    p {
+      margin: 30%;
+      font-size: larger;
+      color: black;
+    }
+
+    .terzo {
+      background-color: rgb(0, 148, 163);
+      margin-top: -30%;
+    }
+    
+    #culla {
+      padding-bottom: 4%;
+    }
+
+    #titolo3 {
+      color: black;
+      margin-left: 30%;
+      margin-bottom: 0%;
+      font-weight: 400;
+      padding-top: 4%;
+    }
+
+    #paragrafo2 {
+      margin-top: 1%;
+      padding-bottom: 9%;
+      font-size: larger;
+      line-height: 1.5em; 
+    }
+
+    #corsivo {
+      font-style: italic;
+      margin-top: -39%;
+      line-height: 1.5em; 
+    }
+
+    #paragrafo3 {
+      margin-top: -31%;
+      line-height: 1.5em; 
+    }
+
+    #immagine1 {
+      margin-left: 36%;
+      margin-top: -22%;
+      padding-bottom: 1%;
+    }
+
+    figcaption {
+      text-align: center;
+      padding-bottom: 2%;
+    }
+
+    #anno3  {color: black;
+      margin-left: 30%;
+      margin-bottom: 0%;
+      font-weight: 400;
+    padding-top: 4%;}
+
+    .quarto {background-color: rgb(255, 206, 1);}
+    #paragrafo4 {margin-top: 2%; padding-bottom: 6%; line-height: 1.5em; }
+    
+    .quinto {background-color: rgb(242, 111, 33); margin-top: -30%;}
+    #corsivo2 {font-style: italic;   margin-bottom: -31%; line-height: 1.5em; }
+    #paragrafo5 {margin-top: 2%; margin-bottom: -31%; line-height: 1.5em; }
+    #cipressi {margin-left: 30%; width: 45%; margin-top: -25%; padding-bottom: 10%;}
+    #campo {margin-top: -9%; padding-bottom: 7%;}
+    #paragrafo6 {line-height: 1.5em; }
+    .row {
+  display: flex; margin-top: -28%;
+  padding-bottom: 6%;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+.sesto {background-color: rgb(251, 174, 23);}
+.settimo {background-color: rgb(93, 161, 77) ;}
+#paragrafo7 {margin-top: 2%; line-height: 1.5em; padding-bottom: 8%;}
+#paragrafo8 {line-height: 1.5em; margin-top: 2%;}
+#corsivo3 {line-height: 1.5em; margin-top: -30%;}
+#paragrafo9 {line-height: 1.5em; margin-top: -31%; padding-bottom: 8%;}
+#anno21 {
+      color: black;
+      margin-left: 30%;
+      margin-bottom: 0%;
+      font-weight: 400;
+      padding-top: 4%;
+    }
+
+.ottavo {margin-top: -30%; background-color: #0094A3;}
+
+.nono {background-color: rgb(163, 200, 216); margin-top: -30%;}
+#paragrafo10 {margin-top: 2%; line-height: 1.5em; font-style: italic;}
+#paragrafo11 {margin-top: -31%; line-height: 1.5em; padding-bottom: 7%; margin-bottom: 26%;}
+#finale1 {margin-left: 30%; width: 45%; margin-top: -25%; padding-bottom: 10%;}
+#finale2 {margin-left: 30%; width: 45%; margin-top: -5%; padding-bottom: 10%;}
+#clouds {margin-top: -9%; margin-bottom: 6%;}
+#trees {margin-top: -9%; padding-bottom: 8%;}
+.row {margin-left: 10%; margin-right: 10%;}
+
+
+#btnScrollToTop {
+  position: fixed;
+  right: 10x;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e62739;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#btnScrollToTop:active {
+  background-color: #cc2333;
+}
+
+.btn-group{margin-left: 30%;}
+
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar ">
+      <div class="navbar-toggle">
+        <button class="menu-toggle" onclick="apriMenu()"><img src="image/menubutton.png" id="menubutton"></button>
+        <div id="logoHome">
+          <a href="#" id="dimLogo"><img src="image/logo.png"></a>
+        </div>
+        
+        <div>
+          <a th:href="@{/biglietto}"  class="blurry-brush-button-2 catafratto">BIGLIETTERIA</a>
+          <a href="#" id="profileImg" style="display: none;"><img src="profile.png" alt="Profile Image"></a>
+      </div>
+
+        <div>
+          <a th:href="@{/login}" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
+          <a href="#" id="profileImg" style="display: none;"><img src="profile.png" alt="Profile Image"></a>
+      </div>
+      </div>
+      
+  </nav>
+
+  <div class="sidebar">
+    <ul class="menu">
+      <li class="Mahekjain-button-1"><a href="#">Home</a></li>
+      <li class="Mahekjain-button-1"><a href="#">L'artista</a></li>
+      <li class="Mahekjain-button-1"><a href="#">Le Opere</a></li>
+      <li class="Mahekjain-button-1"><a href="#">Negozio</a></li>
+    </ul>
+  </div>
+  </header>
+
+  <button id="btnScrollToTop">
+    <i class="material-icons">arrow_upward</i>
+  </button>
+
+
+
+
+  
+
+  <section class="primo">
+  
+    <br>
+    <h1 id="anno1"> Biografia
+      <br>
+    
+      1853 - 1890
+     </h1>
+
+
+
+  </section>
+
+  <section class="secondo">
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+      <a href="#anno2" class="btn btn-outline-dark" >I primi passi da artista</a>
+      <a href="#anno3"   class="btn btn-outline-dark">Dall'oscurità alla luce</a>
+      <a href="#anno21" class="btn btn-outline-dark">Gli ultimi mesi di Vincent</a>
+      
+    </div>
+
+    <H1 id="anno2"> 1881-1883</H1>
+    <p id="paragrafo1">
+      I genitori di Vincent non erano molto contenti del suo sogno di una vita da artista. Fortunatamente, questo non
+      impedì a Vincent
+      di lavorare sodo e di migliorare le sue capacità. Visse in diverse località dei Paesi Bassi.
+      All'Aia prese lezioni di pittura e disegno con lo zio, l'artista Anton Mauve. Tuttavia, anche l'amore gli fornì
+      l'ispirazione.
+    </p>
+
+  </section>
+
+  <section class="terzo">
+    <br>
+    <H1 id="titolo3"> Da Etten a L'Aia </H1>
+    <p id="paragrafo2">
+      Nella primavera del 1881, Vincent tornò a vivere con i genitori, che ora abitavano a Etten, sempre nel Brabante.
+      Si esercita a disegnare e lavora spesso fuori casa. Nel frattempo, suo fratello Theo era stato nominato direttore
+      della Goupil & Cie a Parigi. Egli sostenne finanziariamente Vincent in modo che potesse concentrarsi completamente
+      sulla sua arte.
+      <br>
+      <br>
+
+      I genitori di Vincent, al contrario, erano estremamente delusi che il loro figlio maggiore avesse scelto la vita
+      dell'artista, che ai loro occhi era sinonimo di fallimento sociale. Non aiutava il fatto che Vincent si fosse
+      innamorato di sua cugina, Kee Vos. Kee era vedova e non voleva avere niente a che fare con lui, ma Van Gogh
+      insistette. La cosa non andò giù alla sua famiglia e, in seguito a un litigio con il padre, Vincent se ne andò
+      dalla casa dei genitori il giorno di Natale del 1881. Trovò una nuova casa all'Aia.
+      <br>
+      <br>
+    <p id="corsivo">
+      "Papà non può empatizzare o simpatizzare con me, e io non posso adattarmi alla routine di papà e mamma, è troppo
+      costrittiva per me - mi soffocherebbe".
+    </p>
+    <br>
+    <br>
+    <p id="paragrafo3">
+      Vincent a Theo, Etten, il 23 dicembre 1881 circa.
+    </p>
+    </p>
+    <img id="immagine1" src="image/girl-kneeling-by-a-cradle-1883(1).jpg!Large.jpg" alt="Girl_Kneeling">
+    <figcaption id="culla">Vincent van Gogh, Girl Kneeling by a Cradle, 1883</figcaption>
+    <br>
+    <br>
+  </section>
+
+  <section class="quarto">  
+    <br>
+   <H1 id="anno3"> 1886 - 1888 </H1>
+    <p id="paragrafo4"> 
+      A Parigi, Vincent sviluppò il proprio stile, ben noto, con colori vivaci. Tuttavia, dopo due anni la vita frenetica della città, 
+      che all'inizio gli aveva dato tanta ispirazione, divenne eccessiva.
+    </p>
+   
+   </section>
+
+   <section class="quinto">  
+    <br>
+   <H1 id="anno3"> Ispirazione </H1>
+    <p id="paragrafo4"> 
+      Theo era il direttore dei mercanti d'arte Goupil sul Boulevard Montmartre a Parigi. Introdusse il fratello al lavoro colorato di importanti artisti
+       moderni come Claude Monet. Nello studio di Fernand Cormon, Vincent van Gogh conobbe anche una nuova generazione di artisti, tra cui Henri de 
+       Toulouse-Lautrec ed Emile Bernard.
+       <br>
+       <br>
+      Tutte queste nuove impressioni e nuove persone influenzarono il suo lavoro e lo ispirarono a sperimentare liberamente. I toni scuri Dei Mangiatori di
+       Patate lasciano presto il posto a colori più vivaci, come in La Collina di Montmartre con Cava di Pietra.
+    </p>
+   
+    <div class="row">
+      <div class="column">
+        <img src="image/1.png" alt="Snow" style="width:100%">
+        <figure> Vincent van Gogh, The Potato Eaters, 1885 </figure>
+      </div>
+      <div class="column">
+        <img src="image/2.png" alt="Forest" style="width:100%">
+        <figure> Vincent van Gogh, The Hill of Montmartre with Stone Quarry, 1886 </figure>
+      </div>
+    </div>
+    
+
+    <section class="sesto">
+      <br>
+      <H1 id="anno2"> Provenza </H1>
+      <p id="paragrafo5">
+        Dopo due anni, Vincent cominciò a stancarsi della frenetica vita cittadina di Parigi.
+      </p>
+        <br>
+        <br>
+      <p id="corsivo2">
+      "Mi sembra quasi impossibile riuscire a lavorare a Parigi, a meno che non si abbia un rifugio in cui riprendersi e 
+      ritrovare la propria serenità e autocontrollo. Senza questo, saresti destinato a intorpidirti completamente".
+    </p>
+      <br>
+      <br>
+      <p id="paragrafo6">
+      Vincent a Theo, 21 febbraio 1888
+      <br>
+      <br>
+      
+      Desiderava la pace della campagna, il sole, la luce e il colore dei paesaggi "giapponesi", che sperava di trovare in Provenza,
+       nel sud della Francia. Dopo un viaggio in treno durato un giorno e una notte, il 20 febbraio 1888 arrivò ad Arles, una piccola città sul fiume Rodano.
+      <br>
+      <br>
+      </p>
+      <img id="cipressi" src="image/cipressi.jpg" alt="">
+      <figcaption id="campo">Campo di grano con cipressi, 1889 </figcaption>
+    </section>
+   </section>
+
+   <section class="settimo">
+    <br>
+    <H1 id="anno21"> 1890</H1>
+    <p id="paragrafo7">
+      Vincent trascore gli ultimi mesi della sua vita a Auvers-sur-Oise, un villaggio di artisti vicino a Parigi. Fece nuove amicizie e si dedicò alla pittura. 
+      Tuttavia, dopo una visita a Theo, Vincent si preoccupò molto del suo futuro finanziario. Questa incertezza divenne troppo pesante da sopportare, oltre ai problemi di salute mentale. 
+      Vincent pose fine alla sua vita nel luglio del 1890.
+    </p>
+
+  </section>
+
+  <section class="ottavo">
+    <br>
+    <H1 id="anno2"> Preoccupazioni finanziarie </H1>
+    <p id="paragrafo8">
+      Vincent visitò Theo e la sua famiglia a Parigi all'inizio di luglio del 1890, dove apprese che il fratello stava pensando di lasciare il suo
+       lavoro presso il mercante d'arte che aveva gestito per molti anni.
+       <br>
+       <br>
+
+      Theo voleva mettersi in proprio, il che comportava inevitabilmente un certo rischio finanziario. Vincent tornò ad Auvers preoccupato.
+      <br>
+      <br>
+      </p>
+      <p id="corsivo3">
+      "Una volta tornato qui, anch'io mi sentivo ancora molto triste e continuavo a sentire la tempesta che minaccia anche voi. 
+      Che cosa si può fare - vedi, di solito cerco di essere abbastanza bonario, ma anche la mia vita è attaccata alla radice, anche il mio passo sta vacillando. "
+      </p>
+      <br>
+      <br>
+      <p id="paragrafo9">
+      Vincent a Theo, Auvers-sur-Oise, circa 10 luglio 1890
+      <br>
+      <br>
+      Sia Theo che sua moglie Jo scrissero a Vincent per rassicurarlo. Ma l'incertezza finanziaria e il timore che i suoi attacchi
+       nervosi potessero ritornare, pesarono molto sulla salute di Van Gogh. Non riusciva a scrollarsi di dosso la tristezza per il futuro.
+    </p>
+  </section>
+
+  <section class="nono">
+    <br>
+    <H1 id="anno2"> Suicidio</H1>
+    <p id="paragrafo10">
+      ". . . sapendo chiaramente cosa volevo ho dipinto altre tre grandi tele da allora. Sono immense distese di campi di grano sotto un cielo turbolento,
+       e ho cercato di esprimere una tristezza, una solitudine estrema. Lo vedrai presto, perché spero di portartele a Parigi il prima possibile,
+        perché credo che queste tele ti diranno quello che non riesco a dire a parole, quello che considero sano e fortificante della campagna".
+      </p>
+      <br>
+      <br>
+      <p id="paragrafo11">
+      Vincent a Theo, Auvers-sur-Oise, 10 luglio 1890 circa.
+      <br>
+      <br>
+      Per quanto Vincent trovasse "salutare e fortificante" la campagna, ciò non fu di alcun aiuto. La sua malattia e l'incertezza
+       sul futuro divennero troppo forti.
+       <br>
+       <br>
+      Il 27 luglio 1890, entrò in un campo di grano e si sparò al petto con una pistola. L'artista ferito torna barcollando nella sua stanza
+       all'Auberge Ravoux. Theo si precipitò da Parigi ad Auvers e fu presente quando il fratello morì per le ferite riportate il 29 luglio.
+       <br>
+       <br>
+      Vincent fu sepolto ad Auvers il 30 luglio 1890. La sua eredità è costituita da una vasta gamma di opere d'arte: 
+      oltre 850 dipinti e quasi 1.300 opere su carta.
+    </p>
+    
+      <img id="finale1" src="image/5.jpeg" alt="">
+      <figcaption id="clouds">Vincent van Gogh, Wheatfield under Thunderclouds, 1890 </figcaption>
+      <br>
+      <br>
+      <br>
+      <img id="finale2" src="image/6.jpeg" alt="">
+      <figcaption id="trees">Vincent van Gogh, Tree Roots, 1890 </figcaption>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <script src="js/script.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+<script src="js/biografia.js"></script>
+</body>
+
+</html>
