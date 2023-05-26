@@ -1,6 +1,7 @@
 package it.corso.service;
 
 import java.time.LocalDate;
+import java.util.Iterator;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,20 +24,34 @@ public class BigliettoServiceImpl implements BigliettoService {
 	
 	
 	@Override
-	public void registraBiglietto(Object...dati) 
+	public String registraBiglietto(Object...dati) 
 	{
 		Biglietto biglietto= new Biglietto();
 		String data = (String) dati[0];
 		int idUtente = (int) dati[1];
 		int idEvento = (int) dati[2];
-	
+		Evento evento = eventoService.getEventoById(idEvento);
+		LocalDate dataIngresso = LocalDate.parse(data);
+		
+		if (dataIngresso.isBefore(evento.getDataInizio()) || 
+			dataIngresso.isAfter(evento.getDataFine())) 
+		{
+			return "data";
+		}
+		
+		for (int i = 0; i < getBiglietto().size(); i++) {
+			if (getBiglietto().get(i).getUtente().getId() == idUtente) {
+				return "biglietto";
+			}
+		}
+
 		biglietto.setPrezzo(20.90);
 		biglietto.setDataAcquisto(LocalDate.now());
-		biglietto.setDataIngresso(LocalDate.parse(data));
+		biglietto.setDataIngresso(dataIngresso);
 		biglietto.setUtente(utenteService.getUtenteById(idUtente));
-		Evento evento = eventoService.getEventoById(idEvento);
 		biglietto.setEvento(evento);
 		bigliettoDao.save(biglietto);
+		return "save";
 		
 	}
 

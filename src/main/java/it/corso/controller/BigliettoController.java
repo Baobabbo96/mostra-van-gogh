@@ -1,5 +1,6 @@
 package it.corso.controller;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +29,16 @@ public class BigliettoController {
 	
 	
 	@GetMapping
-	public String getPage(Model model, HttpSession session) 
+	public String getPage(Model model, 
+			HttpSession session,
+			@RequestParam(name="derr", required = false) String derr,
+			@RequestParam(name="berr", required = false) String berr) 
 	{	
 		if  (session.getAttribute("utente") != null) 
 		{
 			List<Evento> eventi= eventoService.getEventi();
+			model.addAttribute("dataError", derr != null);
+			model.addAttribute("bigliettoError", berr != null);
 			model.addAttribute("eventi", eventi);	
 			return "biglietto";
 		}
@@ -47,7 +53,13 @@ public class BigliettoController {
 	{
 		Utente utente= (Utente) session.getAttribute("utente");
 		int idUtente= utente.getId();
-		bigliettoService.registraBiglietto(dataIngresso,idUtente,idEvento);
-		return"redirect:/home";
+		if (bigliettoService.registraBiglietto(dataIngresso,idUtente,idEvento).equalsIgnoreCase("save")) 
+		{
+			return"redirect:/home";
+		}else if (bigliettoService.registraBiglietto(dataIngresso,idUtente,idEvento).equalsIgnoreCase("data")) {
+			return"redirect:/biglietto?derr";
+		}
+		return "redirect:/biglietto?berr";
+		
 	}
 }
