@@ -27,7 +27,7 @@ public class RegistraOpereController {
 			HttpSession session)
 	{
 		if (session.getAttribute("admin")==null) {
-			return "redirect:/home";
+			return "redirect:/forbidden";
 		}
 		model.addAttribute("opera", new Opera());
 		return "registra_opere";		

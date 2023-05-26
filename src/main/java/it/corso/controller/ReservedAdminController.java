@@ -13,7 +13,7 @@ public class ReservedAdminController {
 	@GetMapping
 	public String getPage(HttpSession session) {
 		if(session.getAttribute("admin") == null)
-			return "redirect:/admin";
+			return "redirect:/forbidden";
 		return "reserved_admin";
 	}
 }

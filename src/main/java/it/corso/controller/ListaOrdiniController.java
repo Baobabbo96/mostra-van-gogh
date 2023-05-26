@@ -21,7 +21,7 @@ public class ListaOrdiniController {
 			Model model,
 			HttpSession session) {
 		if (session.getAttribute("admin") == null)
-			return "redirect:/home";
+			return "redirect:/forbidden";
 		model.addAttribute("ordini", ordineService.getOrdini());
 		return "lista_ordini";
 	}

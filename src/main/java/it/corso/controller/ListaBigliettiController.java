@@ -23,6 +23,6 @@ public class ListaBigliettiController
 			model.addAttribute("biglietti", bigliettoService.getBiglietto());
 			return "lista_biglietti";
 		}
-		return "redirect:/home";
+		return "redirect:/forbidden";
 	}
 }

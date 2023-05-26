@@ -13,7 +13,7 @@ public class ReservedController {
 	@GetMapping
 	public String getPage(HttpSession session) {
 		if(session.getAttribute("utente") == null)
-			return "redirect:/login";
+			return "redirect:/forbidden";
 		return "reserved";
 	}
 }

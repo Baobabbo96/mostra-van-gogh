@@ -24,6 +24,6 @@ public class ListaUtenteController {
 			model.addAttribute("utenti", utenteService.getUtenti());
 			return "index";
 		}
-		return "redirect:/home";
+		return "redirect:/forbidden";
 	}
 }
