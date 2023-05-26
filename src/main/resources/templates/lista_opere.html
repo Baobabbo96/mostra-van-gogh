@@ -41,12 +41,12 @@
           
           <div>
             <a href="ticket.html"  class="blurry-brush-button-2 catafratto">BIGLIETTERIA</a>
-            <a href="#" id="profileImg" style="display: none;"><img src="profile.png" alt="Profile Image"></a>
+            <a href="#" id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
         </div>
   
           <div>
             <a href="login.html" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
-            <a href="#" id="profileImg" style="display: none;"><img src="profile.png" alt="Profile Image"></a>
+            <a href="#" id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
         </div>
         </div>
     </nav>
@@ -79,7 +79,7 @@
         <div class="u-gallery-inner u-gallery-inner-1" role="listbox">
           <div th:each="o : ${opere}" class="u-effect-fade u-effect-hover-zoom u-gallery-item u-gallery-item-1">
             <div class="u-back-slide" data-image-width="700" data-image-height="335">
-              <img class="u-back-image u-expanded u-image-contain u-back-image-1" th:src="${o.immagine}" alt="">
+              <a th:href="@{/dettaglio-opera?(id=${o.id})}"><img class="u-back-image u-expanded u-image-contain u-back-image-1" th:src="${o.immagine}" alt=""></a>
             </div>
             <div class="u-align-center u-container-align-center u-over-slide u-valign-top u-over-slide-1">
               <h3 class="u-align-center u-gallery-heading u-text-body-color" style="width: 252px; margin-right: auto; margin-left: auto;"></h3>
