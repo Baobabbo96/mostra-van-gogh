@@ -31,6 +31,8 @@
                     <button type="submit" id="login">Log in</button>
                     <div class="register">
                         <p>Non hai un account? <a th:href="@{/registrazione}">Registrati</a></p>
+                        <p><a th:href="@{/home}">Torna alla Hompage</a></p>
+                        
                     </div>
                 </form>
                 <p th:if="${logError}" style="color: red; text-align: center;">Credenziali Errate</p>

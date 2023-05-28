@@ -1,10 +1,113 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Forbidden</title>
-	</head>
-	<body>
-		<h1>303 FORBIDDEN</h1>
-	</body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 Forbidden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/gotham-rounded-ssm');
+    body {
+        margin: auto;
+        font-family:'Gotham Rounded SSm', sans-serif;
+        font-weight: 400;
+    }
+    #box_pulsante,a{
+        text-align: center;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #000000
+    }
+    #pulsante_home{
+        background-image: url(vaso_di_girasoli.jpg);
+        -webkit-transition: 0.25s;
+        transition: 0.25s;
+        background-color:  rgb(93, 161, 77) ;
+        border: 2px solid;
+        font: inherit;
+        line-height: 1;
+        padding: 1em 2em;
+        color: #000000;
+        border-radius: 25px;
+    }
+     #img_van{ 
+         max-width: 100%; 
+         height: auto; 
+     } 
+    #box_img{
+        text-align: center;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+    #testo_Forbidden,p,h1{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        text-align: center;
+    }
+</style>
+<body>
+    <header>
+        <nav class="navbar ">
+        <div class="navbar-toggle">
+          <button class="menu-toggle" onclick="apriMenu()"><img th:src="@{image/menubutton.png}" id="menubutton"></button>
+          <div id="logoHome">
+            <a href="#" id="dimLogo"><img src="image/logo.png"></a>
+          </div>
+
+          <div>
+            <a th:href="@{/biglietto}"  class="blurry-brush-button-2 catafratto">BIGLIETTERIA</a>
+            <a href="#" id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
+        </div>
+
+          <div>
+            <a th:href="@{/login}" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
+            <a  id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
+        </div>
+        </div>
+    </nav>
+        <div class="sidebar">
+      <ul class="menu">
+        <li class="Mahekjain-button-1"><a th:href="@{/home}">Home</a></li>
+        <li class="Mahekjain-button-1"><a th:href="@{/biografia}">L'artista</a></li>
+        <li class="Mahekjain-button-1"><a th:href="@{/opere}">Le Opere</a></li>
+        <li class="Mahekjain-button-1"><a th:href="@{/ordine}">Compra una stampa</a></li>
+      </ul>
+    </div>
+    </header>
+    
+    <div id=#testo_Forbidden class="mt-3">
+        <h1>403 FORBIDDEN</h1>
+        <p>Non hai il permesso per accedere a questa risorsa.<br>
+        	Per poter accedere a questa risorsa devi loggarti.	
+        </p>
+    </div>
+   
+    <div id="box_img">
+        <img id="img_van" src="image/van_gogh_angry.jpg" alt="" class="mt-3" width="490px" height="420px">
+    </div>
+   
+    
+    <div id="box_pulsante">
+       
+            <a id="pulsante_home" th:href="@{/home}">TORNA ALLA HOME</a>
+        
+    </div>
+     
+     
+  <script src="js/script.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+     
+</body>
 </html>
