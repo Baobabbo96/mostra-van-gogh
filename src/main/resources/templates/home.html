@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Home</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <style>
+      
+      @import url('https://fonts.cdnfonts.com/css/gotham-rounded-ssm');
+      body {
+      margin: auto;
+      font-family:'Gotham Rounded SSm', sans-serif;
+      font-weight: 400;
+      }
+      #testo_video{
+        position: absolute;
+        margin: 25% auto auto 200px;
+        color: #fff;
+      }
+      .settimo {background-color: rgb(93, 161, 77) ;}
+      .carosello{
+        margin-top: 2%;
+      } 
+      .container-fluid{
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+      }
+      #titolo_carosello{
+        text-align: start;
+        margin-left: 12rem;
+        margin-bottom: 3rem;
+        margin-top: 10%;
+      }
+      .terzo {
+      background-color: rgb(0, 148, 163);
+      padding-top: 8%;
+      padding-bottom: 8%;
+      }
+      .descrizione_evento{
+        line-height: 1.5rem;
+        margin-left: 30%;
+        margin-right: 30%;
+        font-weight: 400;
+      }
+      #descrizione_evento1p{
+        margin-top: 4%;
+      }
+      #descrizione_evento2p{
+        margin-top: 6%;
+      }
+      .testo_maps{
+        padding-top: 20%;
+        font-weight: 400;
+      }
+      #maps{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+      }      
+      .sesto {
+        background-color: rgb(251, 174, 23);
+      }
+      #drag-container, #spin-container {
+        position: relative;
+        display: flex;
+        margin: 5% auto 5% auto;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transform: rotateX(-10deg);
+        transform: rotateX(-10deg);
+      }
+      #drag-container img, #drag-container video {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 200px;
+        font-size: 50px;
+        text-align: center;
+        -webkit-box-shadow: 0 0 8px #fff;
+        box-shadow: 0 0 8px #fff;
+        -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+      }
+      #drag-container img:hover, #drag-container video:hover {
+        -webkit-box-shadow: 0 0 15px #fffd;
+        box-shadow: 0 0 15px #fffd;
+        -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+      }
+      #drag-container p {
+        font-family: Serif;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+        transform: translate(-50%,-50%) rotateX(90deg);
+        color: #fff;
+      }
+      #ground {
+        width: 900px;
+        height: 900px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+        transform: translate(-50%,-50%) rotateX(90deg);
+        background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent);
+      }
+      #pulsante_video{
+        background-image: url(vaso_di_girasoli.jpg);
+        -webkit-transition: 0.25s;
+        transition: 0.25s;
+        background-color:  rgb(93, 161, 77) ;
+        border: 2px solid;
+        font: inherit;
+        line-height: 1;
+        padding: 1em 2em;
+        color: #000000;
+        border-radius: 25px;
+      }
+      #box_pulsante_video,a{
+        font-family:'Gotham Rounded SSm', sans-serif;
+        font-weight: 400;
+        text-align: center;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #000000
+    }
+
+    @-webkit-keyframes spin {
+      from{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    } to{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+      }
+
+    @keyframes spin {
+    from{
+        -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+    } to{
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    }
+    }
+    @-webkit-keyframes spinRevert {
+    from{
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    } to{
+        -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+    }
+    }
+    @keyframes spinRevert {
+    from{
+        -webkit-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    } to{
+        -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+    }
+    }
+
+    </style>
+    <body>
+      <header>
+        <nav class="navbar ">
+        <div class="navbar-toggle">
+          <button class="menu-toggle" onclick="apriMenu()"><img th:src="@{image/menubutton.png}" id="menubutton"></button>
+          <div id="logoHome">
+            <a href="#" id="dimLogo"><img src="image/logo.png"></a>
+          </div>
+
+          <div>
+            <a th:href="@{/biglietto}"  class="blurry-brush-button-2 catafratto">BIGLIETTERIA</a>
+            <a href="#" id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
+        </div>
+
+          <div>
+            <a th:href="@{/login}" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
+            <a  id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
+        </div>
+        </div>
+    </nav>
+        <div class="sidebar">
+      <ul class="menu">
+        <li class="Mahekjain-button-1"><a th:href="@{/home}">Home</a></li>
+        <li class="Mahekjain-button-1"><a th:href="@{/biografia}">L'artista</a></li>
+        <li class="Mahekjain-button-1"><a th:href="@{/opere}">Le Opere</a></li>
+        <li class="Mahekjain-button-1"><a th:href="@{/ordine}">Compra una stampa</a></li>
+      </ul>
+    </div>
+    </header>
+
+    <!--
+
+      parte video home
+
+    -->
+
+      <div class="video1">
+        <div id="testo_video">
+          <h2>TITOLO VIDEO</h2>
+          <div id="box_pulsante_video">
+            <button id="pulsante_video">
+                <a href="">Partecipa</a>
+            </button>
+          </div>
+        </div>
+        <video height="100%" width="100%" preload="auto" autoplay loop>
+         <source type="video/mp4" src="video_copertina3.mp4">
+        </video>
+      </div>
+    
+    <!--
+
+      parte carosello
+
+    -->
+      
+      <h1 id="titolo_carosello">HIGHLIGHTS</h1>
+      <section class="settimo">
+        
+      <div class="carosello">
+          
+        <div class="container-fluid">
+          <div id="carouselExampleCaptions" class="carousel slide">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="image/notte_stellata.jpg" class="d-block w-100" alt="" style="height: 600px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>Notte Stellata</h3>
+                    <p>olio su tela (1889)</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="image/bedroom.jpg" class="d-block w-100" alt="..." style="height: 600px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>La camera di Vincent ad Arles</h3>
+                    <p>olio su tela (1888)</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="image/raccolto.jpg" class="d-block w-100" alt="..." style="height: 600px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>Il raccolto</h3>
+                    <p>olio su tela (1888)</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+
+      descrizione evento
+
+    -->
+    <section class="terzo">
+      <div class="descrizione_evento">
+        <h2>WELCOME TO THE VISIONI D'ARTE</h2>
+        <p id="descrizione_evento1p">
+          Van Gogh: Visioni d'Arte è una mostra straordinaria dedicata alle opere del famoso pittore olandese Vincent van Gogh.
+          Questo evento offre ai visitatori l'opportunità unica di immergersi nel mondo affascinante e travolgente dell'arte di Van Gogh, 
+          esplorando la sua vita, le sue influenze e la sua straordinaria produzione artistica.
+        </p>
+        <p id="descrizione_evento2p">
+          Van Gogh: Visioni d'Arte" è un'occasione straordinaria per gli appassionati d'arte,
+          gli studenti e il pubblico in generale di scoprire e apprezzare l'incredibile genio creativo di Vincent van Gogh.
+        </p>
+      </div>
+    </section>
+
+    <!--
+
+      opere in 3D
+
+    -->
+ 
+    <div id="drag-container">
+      <div id="spin-container">
+
+      <!-- inserimento img/video -->
+
+      <img src="image/Caffe.jpg" alt="">
+      <img src="image/cipressi.jpg" alt="">
+      <img src="image/terrazza.jpg" alt="">
+      <img src="image/notte.jpg" alt="">
+      <img src="image/vaso_di_girasoli.jpg" alt="">
+      <img src="image/bedroom.jpg" alt="">
+  
+      <!-- testo centrale -->
+      <p>GALLERIA 3D</p>
+      </div>
+      <div id="ground"></div>
+    </div>
+
+    <!--
+
+      parte dove trovarci
+
+    -->
+    
+    <section class="sesto"> 
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-5">
+            <div class="testo_maps">
+              <h3>Vieni a trovarci </h3><br><br>
+              <p>
+              	Il museo è aperto tutti i giorni tranne il martedì. Ultimo ingresso 1 ora prima della chiusura. I visitatori saranno invitati a liberare le sale espositive 30 minuti prima della chiusura. A causa di un problema tecnico la biglietteria online è momentaneamente sospesa. Nel frattempo puoi acquistare il tuo biglietto per oggi in loco, sotto la Piramide.
+              </p>
+            </div>
+          </div>
+          <div class="col">
+          </div>
+          <div class="col-5">
+            <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28253.187590823854!2d12.49740013609178!3d41.898222145785155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60fd228cccc5%3A0x2cf2aafd0eff0128!2sGalleria%20Nazionale%20d&#39;Arte%20Moderna%20e%20Contemporanea!5e0!3m2!1sit!2sit!4v1684854561751!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // You can change global variables here:
+      var radius = 240; // how big of the radius
+      var autoRotate = true; // auto rotate or not
+      var rotateSpeed = -60; // unit: seconds/360 degrees
+      var imgWidth = 160; // width of images (unit: px)
+      var imgHeight = 210; // height of images (unit: px)
+      
+      // ===================== start =======================
+      // animation start after 1000 miliseconds
+      setTimeout(init, 1000);
+      
+      var odrag = document.getElementById('drag-container');
+      var ospin = document.getElementById('spin-container');
+      var aImg = ospin.getElementsByTagName('img');
+      var aVid = ospin.getElementsByTagName('video');
+      var aEle = [...aImg, ...aVid]; // combine 2 arrays
+      
+      // Size of images
+      ospin.style.width = imgWidth + "px";
+      ospin.style.height = imgHeight + "px";
+      
+      // Size of ground - depend on radius
+      var ground = document.getElementById('ground');
+      ground.style.width = radius * 3 + "px";
+      ground.style.height = radius * 3 + "px";
+      
+      function init(delayTime) {
+        for (var i = 0; i < aEle.length; i++) {
+          aEle[i].style.transform = "rotateY(" + (i * (360 / aEle.length)) + "deg) translateZ(" + radius + "px)";
+          aEle[i].style.transition = "transform 1s";
+          aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 4 + "s";
+        }
+      }
+      
+      function applyTranform(obj) {
+        // Constrain the angle of camera (between 0 and 180)
+        if(tY > 180) tY = 180;
+        if(tY < 0) tY = 0;
+
+        // Apply the angle
+        obj.style.transform = "rotateX(" + (-tY) + "deg) rotateY(" + (tX) + "deg)";
+      }
+      
+      function playSpin(yes) {
+        ospin.style.animationPlayState = (yes?'running':'paused');
+      }
+      
+      var sX, sY, nX, nY, desX = 0,
+          desY = 0,
+          tX = 0,
+          tY = 10;
+      
+      // auto spin
+      if (autoRotate) {
+        var animationName = (rotateSpeed > 0 ? 'spin' : 'spinRevert');
+        ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`;
+      }
+      
+      // setup events
+      document.onpointerdown = function (e) {
+        clearInterval(odrag.timer);
+        e = e || window.event;
+        var sX = e.clientX,
+            sY = e.clientY;
+      
+        this.onpointermove = function (e) {
+          e = e || window.event;
+          var nX = e.clientX,
+              nY = e.clientY;
+          desX = nX - sX;
+          desY = nY - sY;
+          tX += desX * 0.1;
+          tY += desY * 0.1;
+          applyTranform(odrag);
+          sX = nX;
+          sY = nY;
+        };
+      
+        this.onpointerup = function (e) {
+          odrag.timer = setInterval(function () {
+            desX *= 0.95;
+            desY *= 0.95;
+            tX += desX * 0.1;
+            tY += desY * 0.1;
+            applyTranform(odrag);
+            playSpin(false);
+            if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+              clearInterval(odrag.timer);
+              playSpin(true);
+            }
+          }, 17);
+          this.onpointermove = this.onpointerup = null;
+        };
+      
+        return false;
+      };
+
+    </script>  
+    <script src="js/script.js"></script>  
+    <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
