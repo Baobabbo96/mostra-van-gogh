@@ -2,11 +2,20 @@
 
 .immagine-lista
 {
-	max-width: 400px;
-	min-width: 400px;	
+	max-width: 93%;
+	min-wigth:auto;
+	box-shadow: 4px 6px 15px black;
+	
 }
 
 .riga-lista 
 {
-	text-align:center;	
+	text-align:center;
+	align-items: center;	
+}
+
+#collezione 
+{	
+	font-size:70px;
+	font-weight:400;
 }
