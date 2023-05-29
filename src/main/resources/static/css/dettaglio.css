@@ -222,14 +222,15 @@ body {
 
     
     margin-top: 8%;
-    padding-bottom: 4%;
+    margin-bottom: 8%;
+    box-shadow: 4px 6px 15px black;
 }
 
 
 
 
 .secondo {
-    background-color: aquamarine;
+    background-color: rgb(255, 206, 1);
 }
 
 #testi {
