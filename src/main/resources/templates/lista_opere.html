@@ -81,14 +81,11 @@
   <main id="main" data-aos="fade" data-aos-delay="1500">
 
     <!-- ======= Gallery Section ======= -->
-   <div class="row ">
-        <div th:each="o : ${opere}" class="col-4 mb-4 riga-lista">
+   <div class="row riga-lista">
+        <div th:each="o : ${opere}" class="col-4 mb-4 align-middle">
             <a th:href="@{dettaglio-opera(id=${o.id})}"><img class="immagine-lista" th:src="@{${o.immagine}}" alt=""></a>
         </div>
-    </div>!-- End Gallery Item -->
-  
-
- !-- End Gallery Section -->
+    </div>
 
   </main><!-- End #main -->
 
