@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabella Utenti</title>
+    <link rel="stylesheet" type="text/css" href="AdminNavBar.css">
+    <style>
+       html{
+        height: 100%;
+       }
+       
+       body {
+            font-family: Arial, sans-serif;
+            background-image: url("imgs/NotteStellata2.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 3%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar ">
+            <div class="navbar-toggle">
+              <button class="menu-toggle" onclick="apriMenu()"><img id="menubutton"src="imgs/menubutton.png"></button>
+            </div>          
+        </nav>
+      
+        <div class="sidebar">
+          <ul class="menu">
+            <li><a href="#">Area Admin</a></li>
+            <li><a href="#">Lista Utenti</a></li>
+            <li><a href="#">Aggiungi Opera</a></li>
+            <li><a href="#">Lista Biglietti</a></li>
+            <li><a href="#">Lista Ordini</a></li>
+          </ul>
+        </div>
+    </header>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Indirizzo</th>
+            <th>Comune</th>
+            <th>Provincia</th>
+            <th>CAP</th>
+        </tr>
+        <tr>
+            <td>john_doe</td>
+            <td>johndoe@example.com</td>
+            <td>John</td>
+            <td>Doe</td>
+            <td>123 Main St</td>
+            <td>Cityville</td>
+            <td>Provinceville</td>
+            <td>12345</td>
+        </tr>
+        <!-- Altre righe della tabella -->
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabella Utenti</title>
+    <link rel="stylesheet" type="text/css" href="css/AdminNavBar.css">
+    <style>
+       html{
+        height: 100%;
+       }
+       
+       body {
+            font-family: Arial, sans-serif;
+            background-color: gainsboro;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 3%;
+        }
+
+        .table-wrapper {
+            width: 45%;
+            margin-bottom: 3%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .custom-select {
+            display: inline-block;
+            position: relative;
+            border-radius: 4px;
+            background-color: #f2f2f2;
+            padding: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar ">
+            <div class="navbar-toggle">
+              <button class="menu-toggle" onclick="apriMenu()"><img id="menubutton"src="image/menubutton.png"></button>
+            </div>          
+        </nav>
+      
+        <div class="sidebar">
+          <ul class="menu">
+            <li><a href="#">Area Admin</a></li>
+            <li><a href="#">Lista Utenti</a></li>
+            <li><a href="#">Aggiungi Opera</a></li>
+            <li><a href="#">Lista Biglietti</a></li>
+            <li><a href="#">Lista Ordini</a></li>
+          </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="table-wrapper">
+            <h1>Utenti Registrati</h1>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                </tr>
+                <tr>
+                    <td>john_doe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+            <h1>Ordini Effettuati</h1>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Importo</th>
+                </tr>
+                <tr>
+                    <td>john_doe</td>
+                    <td>25€</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="table-wrapper">
+            <h1>Biglietti acquistati</h1>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Importo</th>
+                </tr>
+                <tr>
+                    <td>john_doe</td>
+                    <td>15€</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+            <h1>Opere in catalogo</h1>
+            <table>
+                <tr>
+                    <th>Nome Opera</th>
+                    <th>Prezzo Stampa</th>
+                </tr>
+                <tr>
+                    <td>Notte Stellata</td>
+                    <td>25€</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
