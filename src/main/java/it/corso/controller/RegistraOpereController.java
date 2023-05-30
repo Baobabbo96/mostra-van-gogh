@@ -30,7 +30,7 @@ public class RegistraOpereController {
 			return "redirect:/forbidden";
 		}
 		model.addAttribute("opera", new Opera());
-		return "registra_opere";		
+		return "inserimento_opere";		
 	}	
 	
 	@PostMapping

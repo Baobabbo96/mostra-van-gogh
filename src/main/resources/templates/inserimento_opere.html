@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inserimento dati</title>
+    <link rel="stylesheet" type="text/css" href="css/AdminNavBar.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("image/NotteStellata2.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.322);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            margin-top: 4%;
+        }
+
+        label{
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        .form-row {
+            margin-bottom: 15px;
+        }
+
+        .form-row label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-row input[type="text"],
+        .form-row textarea,
+        .form-row input[type="number"],
+        .form-row input[type="file"],
+        .form-row input[type="submit"] {
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-row textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .form-row input[type="submit"] {
+            width: auto;
+            margin: 15px auto 0;
+            display: block;
+            background-color: #0002967a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-row input[type="submit"]:hover {
+            background-color: #000296d7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-toggle">
+              <button class="menu-toggle" onclick="apriMenu()"><img id="menubutton"src="image/menubutton.png"></button>
+            </div>          
+        </nav>
+      
+        <div class="sidebar">
+          <ul class="menu">
+            <li><a href="#">Area Admin</a></li>
+            <li><a href="#">Lista Utenti</a></li>
+            <li><a href="#">Aggiungi Opera</a></li>
+            <li><a href="#">Lista Biglietti</a></li>
+            <li><a href="#">Lista Ordini</a></li>
+          </ul>
+        </div>
+    </header>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <label for="titolo">Titolo:</label>
+                <input type="text" name="titolo" id="titolo">
+            </div>
+            <div class="form-row">
+                <label for="descrizione">Descrizione:</label>
+                <input type="text" name="descrizione" id="descrizione">
+            </div>
+            <div class="form-row">
+                <label for="immagine">Immagine:</label>
+                <input type="file" name="immagine" id="immagine">
+            </div>
+            <div class="form-row">
+                <label for="tecnica">Tecnica:</label>
+                <input type="text" name="tecnica" id="tecnica">
+            </div>
+            <div class="form-row">
+                <label for="prezzo_stampa">Prezzo di stampa:</label>
+                <input type="number" step="any" name="prezzoStampa" id="prezzo_stampa">
+            </div>
+            <div class="form-row">
+                <label for="anno_realizzazione">Anno di realizzazione:</label>
+                <input type="text" name="anno" id="anno_realizzazione">
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Invia">
+            </div>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

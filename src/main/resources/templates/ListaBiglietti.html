@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabella Utenti</title>
+    <link rel="stylesheet" type="text/css" href="AdminNavBar.css">
+    <style>
+       html{
+        height: 100%;
+       }
+       
+       body {
+            font-family: Arial, sans-serif;
+            background-image: url("imgs/NotteStellata2.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 3%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar ">
+            <div class="navbar-toggle">
+              <button class="menu-toggle" onclick="apriMenu()"><img id="menubutton"src="imgs/menubutton.png"></button>
+            </div>          
+        </nav>
+      
+        <div class="sidebar">
+          <ul class="menu">
+            <li><a href="#">Area Admin</a></li>
+            <li><a href="#">Lista Utenti</a></li>
+            <li><a href="#">Aggiungi Opera</a></li>
+            <li><a href="#">Lista Biglietti</a></li>
+            <li><a href="#">Lista Ordini</a></li>
+          </ul>
+        </div>
+    </header>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Evento</th>
+            <th>Data Acquisto</th>
+            <th>Data Ingresso</th>
+            <th>Prezzo</th>
+        </tr>
+        <tr>
+            <td>john_doe</td>
+            <td>Mostra Van Gogh</td>
+            <td>10/02/2023</td>
+            <td>20/04/2023</td>
+            <td>15€</td>
+        </tr>
+        <!-- Altre righe della tabella -->
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
