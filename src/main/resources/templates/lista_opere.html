@@ -81,8 +81,8 @@
 
     <!-- ======= Gallery Section ======= -->
    <div class="row riga-lista">
-        <div th:each="o : ${opere}" class="col-4 mb-4 align-middle">
-            <a th:href="@{dettaglio-opera(id=${o.id})}"><img class="immagine-lista" th:src="@{${o.immagine}}" alt=""></a>
+        <div th:each="o : ${opere}" class="col-4 m-0 p-0 align-middle">
+            <a th:href="@{dettaglio-opera(id=${o.id})}"><img class="immagine-lista img-fluid" th:src="@{${o.immagine}}" alt=""></a>
         </div>
     </div>
   </main><!-- End #main -->
