@@ -61,4 +61,9 @@ public class OrdineServiceImpl implements OrdineService {
 
 	}
 
+	@Override
+	public List<Ordine> getLastOrdini() {
+		return ordineDao.getLastOrdini();
+	}
+
 }

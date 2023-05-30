@@ -9,4 +9,5 @@ public interface EventoService
 	Evento getEventoById(int id);
 	List<Evento> getEventi();
 	void cancellaEvento(Evento evento);
+	List<Evento> getLasEvento();
 }

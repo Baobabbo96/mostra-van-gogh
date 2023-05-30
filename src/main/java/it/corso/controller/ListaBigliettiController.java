@@ -10,7 +10,7 @@ import it.corso.service.BigliettoService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("lista-biglietti")
+@RequestMapping("listabiglietti")
 public class ListaBigliettiController 
 {
 	@Autowired

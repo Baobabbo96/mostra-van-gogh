@@ -65,4 +65,9 @@ public class OperaServiceImpl implements OperaService
 		operaDao.delete(opera);
 	}
 
+	@Override
+	public List<Opera> getLastOpera() {
+		return operaDao.getLastOpera();
+	}
+
 }

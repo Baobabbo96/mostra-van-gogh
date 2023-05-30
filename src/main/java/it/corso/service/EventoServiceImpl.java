@@ -36,4 +36,9 @@ public class EventoServiceImpl implements EventoService {
 		eventoDao.delete(evento);
 	}
 
+	@Override
+	public List<Evento> getLasEvento() {
+		return eventoDao.getLastEvento();
+	}
+
 }

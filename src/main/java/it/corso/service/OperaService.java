@@ -8,5 +8,6 @@ public interface OperaService
 	void registraOpera(Object... dati);
 	Opera getOperaById(int id);
 	List<Opera> getOpere();
-	void cancellaOpera(Opera opera);	
+	void cancellaOpera(Opera opera);
+	List<Opera> getLastOpera();
 }

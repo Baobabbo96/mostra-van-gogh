@@ -12,4 +12,5 @@ public interface UtenteService {
 	List<Utente> getUtenti();
 	boolean controlloLogin(HttpSession utente, String... credenziali);
 	void cancellaUtente(Utente utente);
+	List<Utente> getLastUtenti();
 }
