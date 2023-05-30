@@ -10,6 +10,7 @@
       <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="css/FooterStyle.css">
     </head>
     <style>
       
@@ -231,7 +232,13 @@
          <source type="video/mp4" src="video/video.mp4">
         </video>
       </div>
-    
+      
+      <div aria-label="breadcrumb" class="container">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item" aria-current="page">Home</li>
+       </ol>
+      </div>
+	  
     <!--
 
       parte carosello
@@ -357,12 +364,71 @@
           </div>
           <div class="col">
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5" style="margin-bottom: 3%;">
             <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28253.187590823854!2d12.49740013609178!3d41.898222145785155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60fd228cccc5%3A0x2cf2aafd0eff0128!2sGalleria%20Nazionale%20d&#39;Arte%20Moderna%20e%20Contemporanea!5e0!3m2!1sit!2sit!4v1684854561751!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
     </section>
+    
+     <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <span><img src="image/logo.png" height="200em" width="350em"></span>
+
+        <p class="footer-links">
+          <a href="#" class="link-1">Home</a>
+          
+          <a href="#">L'artista</a>
+        
+          <a href="#">Le Opere</a>
+        
+          <a href="#">Negozio</a>
+          
+          <a href="#">Contattaci</a>
+        </p>
+
+        <p class="footer-company-name">Van Gogh Inc. © 2023</p>
+      </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+1.555.555.5555</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">support@company.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Riguardo l'azienda</span>
+          Sono un paragrafo da riempire
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+      </div>
+
+    </footer>
     <script>
       // You can change global variables here:
       var radius = 240; // how big of the radius
@@ -462,6 +528,7 @@
       };
 
     </script>  
+   	<script src="https://kit.fontawesome.com/dfbcf765cf.js"></script>
     <script src="js/script.js"></script>  
     <script src="js/bootstrap.min.js"></script>
     </body>

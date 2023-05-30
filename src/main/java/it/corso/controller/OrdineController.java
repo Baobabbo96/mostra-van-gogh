@@ -33,8 +33,14 @@ public class OrdineController
 	{
 		if(session.getAttribute("utente") != null) 
 		{
+			boolean logged = false;
+			
+			if(session.getAttribute("utente") != null) {
+				logged = true;
+			}
 			List<Opera> opere = OperaService.getOpere();
 			model.addAttribute("opere", opere);
+			model.addAttribute("logged", logged);
 			return "ordine";
 		}
 		return"redirect:/forbidden";

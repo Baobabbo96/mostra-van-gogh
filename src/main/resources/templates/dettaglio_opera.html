@@ -5,7 +5,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-            <link rel="stylesheet" type="text/css" href="css/dettaglio.css">
+        <link rel="stylesheet" type="text/css" href="css/dettaglio.css">
+        <link rel="stylesheet" type="text/css" href="css/FooterStyle.css">
 </head>
 
 <body>
@@ -39,7 +40,14 @@
     </div>
     </header>
 
-     <!-- BOTTONE TORNA SU -->
+    
+      <div style="background-color: orange;s" aria-label="breadcrumb" class="container-fluid">
+       <ol class="breadcrumb" style="margin:0px">
+         <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+         <li class="breadcrumb-item" ><a th:href="@{/opere}">Opere</a></li>
+         <li class="breadcrumb-item" th:text="${opera.titolo}"></li>
+       </ol>
+      </div>
 
       <button id="btnScrollToTop">
         <i class="material-icons">arrow_upward</i>
@@ -63,12 +71,67 @@
     </div>
 
       </section>
-
-
-
-
       
-      <script src="js/bootstrap.min.js"></script>
+       <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <span><img src="image/logo.png" height="200em" width="350em"></span>
+
+        <p class="footer-links">
+          <a href="#" class="link-1">Home</a>
+          
+          <a href="#">L'artista</a>
+        
+          <a href="#">Le Opere</a>
+        
+          <a href="#">Negozio</a>
+          
+          <a href="#">Contattaci</a>
+        </p>
+
+        <p class="footer-company-name">Van Gogh Inc. © 2023</p>
+      </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+1.555.555.5555</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">support@company.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Riguardo l'azienda</span>
+          Sono un paragrafo da riempire
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+      </div>
+
+    </footer>
+    <script src="https://kit.fontawesome.com/dfbcf765cf.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
