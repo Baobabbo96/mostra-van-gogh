@@ -1,13 +1,140 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-	</head>
-	<body>
-		<h1>Area riservata</h1>
-		<a th:href="@{/registraopere}">Modifica catalogo opere</a>
-		<a th:href="@{/home}">Torna alla pagina principale</a>
-		<a th:href="@{/listaordini}">Visualizza lista ordini</a>		
-	</body>
+<head>
+    <title>Tabella Utenti</title>
+    <link rel="stylesheet" type="text/css" href="css/AdminNavBar.css">
+    <style>
+       html{
+        height: 100%;
+       }
+       
+       body {
+            font-family: Arial, sans-serif;
+            background-color: gainsboro;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 3%;
+        }
+
+        .table-wrapper {
+            width: 45%;
+            margin-bottom: 3%;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .custom-select {
+            display: inline-block;
+            position: relative;
+            border-radius: 4px;
+            background-color: #f2f2f2;
+            padding: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar ">
+            <div class="navbar-toggle">
+              <button class="menu-toggle" onclick="apriMenu()"><img id="menubutton"src="image/menubutton.png"></button>
+            </div>          
+        </nav>
+      
+        <div class="sidebar">
+          <ul class="menu">
+            <li><a th:href="@{/reservedadmin}">Area Admin</a></li>
+            <li><a th:href="@{/list}">Lista Utenti</a></li>
+            <li><a th:href="@{/registraopere}">Aggiungi Opera</a></li>
+            <li><a th:href="@{/opereadmin}">Lista Opere</a></li>            
+            <li><a th:href="@{/listabiglietti}">Lista Biglietti</a></li>
+            <li><a th:href="@{/listaordini}">Lista Ordini</a></li>
+          </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="table-wrapper">
+            <h1>Ultimi Utenti Registrati</h1>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                </tr>
+                <tr th:each="u : ${utenti}">
+                    <td th:text="${u.username}"></td>
+                    <td th:text="${u.nome}"></td>
+                    <td th:text="${u.cognome}"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+            <h1>Ultimi Ordini Effettuati</h1>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Importo</th>
+                </tr>
+                <tr th:each="o : ${ordini}">
+                    <td th:text="${o.utente.username}"></td>
+                    <td th:text="${o.importo} + '€'"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="table-wrapper">
+            <h1>Ultimi Biglietti acquistati</h1>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Evento</th>
+                </tr>
+                <tr th:each="b : ${biglietti}">
+                    <td th:text="${b.utente.username}"></td>
+                    <td th:text="${b.evento.descrizione}"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-wrapper">
+            <h1>Ultime Opere in catalogo</h1>
+            <table>
+                <tr>
+                    <th>Nome Opera</th>
+                    <th>Prezzo Stampa</th>
+                </tr>
+                <tr th:each="o : ${opere}">
+                    <td th:text="${o.titolo}"></td>
+                    <td th:text="${o.prezzoStampa}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
 </html>

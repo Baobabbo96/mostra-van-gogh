@@ -1,7 +1,6 @@
 package it.corso.service;
 
 import java.time.LocalDate;
-import java.util.Iterator;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,7 +55,7 @@ public class BigliettoServiceImpl implements BigliettoService {
 	}
 
 	@Override
-	public Biglietto getABigliettoById(int id) {
+	public Biglietto getBigliettoById(int id) {
 		return bigliettoDao.findById(id).get();
 	}
 
@@ -68,6 +67,11 @@ public class BigliettoServiceImpl implements BigliettoService {
 	@Override
 	public void cancellaBiglietto(Biglietto biglietto) {
 		bigliettoDao.delete(biglietto);
+	}
+
+	@Override
+	public List<Biglietto> getLastBiglietto() {
+		return bigliettoDao.getLastBiglietto();
 	}
 
 }

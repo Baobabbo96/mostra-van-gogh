@@ -43,4 +43,11 @@ public class UtenteServiceImpl implements UtenteService {
 		session.setAttribute("utente", utente);
 		return true;
 	}
+
+	@Override
+	public List<Utente> getLastUtenti() {
+		return utenteDao.getLastUtenti();
+	}
+	
+	
 }
