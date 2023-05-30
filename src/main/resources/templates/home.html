@@ -204,7 +204,8 @@
         </div>
 
           <div>
-            <a th:href="@{/login}" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
+            <a th:if="${!logged}" th:href="@{/login}" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
+            <a th:if="${logged}" th:href="@{/reserved}" id="resBtn" class="catafratto blurry-brush-button-1">Account</a>
             <a  id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
         </div>
         </div>
