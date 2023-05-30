@@ -14,11 +14,11 @@
     				background-size: cover;">
         <div class="form-box">
             <div class="form-value">
-                <form method="post" action="login">
+                <form method="POST" action="admin/login">
                     <h2>Login Admin</h2>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
-                        <input type="username" name="username" required>
+                        <input type="text" name="username" required>
                         <label for="">Username</label>
                     </div>
                     <div class="inputbox">
@@ -26,9 +26,6 @@
                         <input type="password" name="password" required>
                         <label for="">Password</label>
                     </div>
-<!--                     <div class="forget"> -->
-<!--                         <label for=""><input type="checkbox"> Remember me  &nbsp &nbsp&nbsp &nbsp <a href="#">Password dimenticata?</a></label> -->
-<!--                     </div> -->
                     <button type="submit" id="login">Log in</button>
                 </form>
                 <p th:if="${logError}" style="color: red; text-align: center;">Credenziali Errate</p>
