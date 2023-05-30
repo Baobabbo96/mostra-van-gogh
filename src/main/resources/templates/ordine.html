@@ -11,6 +11,7 @@
 			<div th:each="o : ${opere}">
 				<input class="check" type="checkbox" th:price="${o.prezzoStampa}" name="opere" th:value="${o.id}">
 				<label th:text="${o.titolo} + ' - ' + ${o.prezzoStampa} + '€'"></label>
+				<img alt="" style="max-width: 100px" th:src="@{${o.immagine}}">
 			</div>
 			<p id="importo">IMPORTO: 0.00€</p>
 			<input type="submit" value="compra">
