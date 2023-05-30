@@ -17,12 +17,10 @@ public class ListaUtenteController {
 	private UtenteService utenteService;
 	
 	@GetMapping
-	public String getPage(Model model,HttpSession session) 
-	{
-		if (session.getAttribute("admin") != null) 
-		{
+	public String getPage(Model model,HttpSession session) {
+		if (session.getAttribute("admin") != null) {
 			model.addAttribute("utenti", utenteService.getUtenti());
-			return "index";
+			return "lista_utenti";
 		}
 		return "redirect:/forbidden";
 	}

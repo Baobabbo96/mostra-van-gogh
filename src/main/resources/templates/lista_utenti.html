@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tabella Utenti</title>
+    <link rel="stylesheet" type="text/css" href="css/AdminNavBar.css">
+    <style>
+       html{
+        height: 100%;
+       }
+       
+       body {
+            font-family: Arial, sans-serif;
+            background-image: url("image/NotteStellata2.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 3%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar ">
+            <div class="navbar-toggle">
+              <button class="menu-toggle" onclick="apriMenu()"><img id="menubutton"src="image/menubutton.png"></button>
+            </div>          
+        </nav>
+      
+        <div class="sidebar">
+          <ul class="menu">
+            <li><a th:href="@{/reservedadmin}">Area Admin</a></li>
+            <li><a th:href="@{/list}">Lista Utenti</a></li>
+            <li><a th:href="@{/registraopere}">Aggiungi Opera</a></li>
+            <li><a th:href="@{/opereadmin}">Lista Opere</a></li>            
+            <li><a th:href="@{/listabiglietti}">Lista Biglietti</a></li>
+            <li><a th:href="@{/listaordini}">Lista Ordini</a></li>
+          </ul>
+        </div>
+    </header>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Indirizzo</th>
+            <th>Comune</th>
+            <th>Provincia</th>
+            <th>CAP</th>
+        </tr>
+        <tr th:each="u : ${utenti}">
+            <td th:text="${u.username}"></td>
+            <td th:text="${u.email}"></td>
+            <td th:text="${u.nome}"></td>
+            <td th:text="${u.cognome}"></td>
+            <td th:text="${u.indirizzo}"></td>
+            <td th:text="${u.comune}"></td>
+            <td th:text="${u.provincia}"></td>
+            <td th:text="${u.cap}"></td>
+        </tr>
+        <!-- Altre righe della tabella -->
+    </table>
+    <script src="js/script.js"></script>
+</body>
+</html>
