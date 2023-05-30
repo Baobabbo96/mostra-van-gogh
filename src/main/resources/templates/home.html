@@ -21,22 +21,27 @@
       }
       #testo_video{
         position: absolute;
-        margin: 25% auto auto 200px;
+        margin: 25% auto auto 8%;
         color: #fff;
       }
-      .settimo {background-color: rgb(93, 161, 77) ;}
+/*       .settimo {background-color: rgb(93, 161, 77) ;} */
       .carosello{
-        margin-top: 2%;
+/*         margin-top: 2%; */
+        margin-bottom: 8%;
       } 
+       .carosello img{
+        height: auto !important;
+        max-width: 100%;
+      }
       .container-fluid{
         padding-left: 10% !important;
         padding-right: 10% !important;
       }
       #titolo_carosello{
-        text-align: start;
-        margin-left: 12rem;
+        text-align: center;
         margin-bottom: 3rem;
-        margin-top: 10%;
+        margin-top: 4%;
+        
       }
       .terzo {
       background-color: rgb(0, 148, 163);
@@ -45,8 +50,8 @@
       }
       .descrizione_evento{
         line-height: 1.5rem;
-        margin-left: 30%;
-        margin-right: 30%;
+/*         margin-left: 30%; */
+/*         margin-right: 30%; */
         font-weight: 400;
       }
       #descrizione_evento1p{
@@ -56,13 +61,20 @@
         margin-top: 6%;
       }
       .testo_maps{
-        padding-top: 20%;
+        padding-top: 12%;
         font-weight: 400;
       }
+/*       #maps {  */
+/*         width: 100%;  */
+/*         height: 300px;  */
+/*       } */
       #maps{
         position: relative;
+        margin-top:8%;
         margin-left: auto;
         margin-right: auto;
+        width: 100%; 
+        height: 300px;
       }      
       .sesto {
         background-color: rgb(251, 174, 23);
@@ -214,16 +226,8 @@
     -->
 
       <div class="video1">
-        <div id="testo_video">
-          <h2>TITOLO VIDEO</h2>
-          <div id="box_pulsante_video">
-            <button id="pulsante_video">
-                <a href="">Partecipa</a>
-            </button>
-          </div>
-        </div>
-        <video height="100%" width="100%" preload="auto" autoplay loop>
-         <source type="video/mp4" src="video_copertina3.mp4">
+        <video height="100%" width="100%" preload="auto" autoplay loop muted="muted">
+         <source type="video/mp4" src="video/video.mp4">
         </video>
       </div>
     
@@ -287,17 +291,25 @@
 
     -->
     <section class="terzo">
-      <div class="descrizione_evento">
-        <h2>WELCOME TO THE VISIONI D'ARTE</h2>
-        <p id="descrizione_evento1p">
-          Van Gogh: Visioni d'Arte è una mostra straordinaria dedicata alle opere del famoso pittore olandese Vincent van Gogh.
-          Questo evento offre ai visitatori l'opportunità unica di immergersi nel mondo affascinante e travolgente dell'arte di Van Gogh, 
-          esplorando la sua vita, le sue influenze e la sua straordinaria produzione artistica.
-        </p>
-        <p id="descrizione_evento2p">
-          Van Gogh: Visioni d'Arte" è un'occasione straordinaria per gli appassionati d'arte,
-          gli studenti e il pubblico in generale di scoprire e apprezzare l'incredibile genio creativo di Vincent van Gogh.
-        </p>
+      <div class="descrizione_evento container">
+      <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-lg-6 col-md-8 col-sm-10 text-center">   
+	      <h2>WELCOME TO THE VISIONI D'ARTE</h2>
+	        <p id="descrizione_evento1p">
+	          Van Gogh: Visioni d'Arte è una mostra straordinaria dedicata alle opere del famoso pittore olandese Vincent van Gogh.
+	          Questo evento offre ai visitatori l'opportunità unica di immergersi nel mondo affascinante e travolgente dell'arte di Van Gogh, 
+	          esplorando la sua vita, le sue influenze e la sua straordinaria produzione artistica.
+	        </p>
+	        <p id="descrizione_evento2p">
+	          Van Gogh: Visioni d'Arte" è un'occasione straordinaria per gli appassionati d'arte,
+	          gli studenti e il pubblico in generale di scoprire e apprezzare l'incredibile genio creativo di Vincent van Gogh.
+	        </p>
+      </div> 
+        <div class="col">
+      </div>
+      </div>
       </div>
     </section>
 
@@ -334,9 +346,9 @@
     <section class="sesto"> 
       <div class="container text-center">
         <div class="row">
-          <div class="col-5">
+          <div class="col-md-5">
             <div class="testo_maps">
-              <h3>Vieni a trovarci </h3><br><br>
+              <h3>Vieni a trovarci </h3>
               <p>
               	Il museo è aperto tutti i giorni tranne il martedì. Ultimo ingresso 1 ora prima della chiusura. I visitatori saranno invitati a liberare le sale espositive 30 minuti prima della chiusura. A causa di un problema tecnico la biglietteria online è momentaneamente sospesa. Nel frattempo puoi acquistare il tuo biglietto per oggi in loco, sotto la Piramide.
               </p>
@@ -344,7 +356,7 @@
           </div>
           <div class="col">
           </div>
-          <div class="col-5">
+          <div class="col-md-5">
             <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28253.187590823854!2d12.49740013609178!3d41.898222145785155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60fd228cccc5%3A0x2cf2aafd0eff0128!2sGalleria%20Nazionale%20d&#39;Arte%20Moderna%20e%20Contemporanea!5e0!3m2!1sit!2sit!4v1684854561751!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
