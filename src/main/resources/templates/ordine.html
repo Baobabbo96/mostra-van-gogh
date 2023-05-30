@@ -1,21 +1,127 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
+	    <link rel="stylesheet" href="css/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="css/style.css">
+	    <link rel="stylesheet" type="text/css" href="css/FooterStyle.css">
 	</head>
+	
 	<body>
-		<h1>form ordine</h1>
-		<form method="post">
-			<label th:text="'Opere:'"></label>
-			<div th:each="o : ${opere}">
-				<input class="check" type="checkbox" th:price="${o.prezzoStampa}" name="opere" th:value="${o.id}">
-				<label th:text="${o.titolo} + ' - ' + ${o.prezzoStampa} + '€'"></label>
-				<img alt="" style="max-width: 100px" th:src="@{${o.immagine}}">
-			</div>
-			<p id="importo">IMPORTO: 0.00€</p>
-			<input type="submit" value="compra">
-		</form>
-		<script type="text/javascript" src="/js/ordine.js"></script>
+	    
+	    <header>
+	        <nav class="navbar ">
+	        <div class="navbar-toggle">
+	          <button class="menu-toggle" onclick="apriMenu()"><img th:src="@{image/menubutton.png}" id="menubutton"></button>
+	          <div id="logoHome">
+	            <a href="#" id="dimLogo"><img src="image/logo.png"></a>
+	          </div>
+	
+	          <div>
+	            <a th:href="@{/biglietto}"  class="blurry-brush-button-2 catafratto">BIGLIETTERIA</a>
+	            <a href="#" id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
+	        </div>
+	
+	          <div>
+	            <a th:if="${!logged}" th:href="@{/login}" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
+	            <a th:if="${logged}" th:href="@{/reserved}" id="resBtn" class="catafratto blurry-brush-button-1">Account</a>
+	            <a  id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
+	        </div>
+	        </div>
+	    </nav>
+	        <div class="sidebar">
+	      <ul class="menu">
+	        <li class="Mahekjain-button-1"><a th:href="@{/home}">Home</a></li>
+	        <li class="Mahekjain-button-1"><a th:href="@{/biografia}">L'artista</a></li>
+	        <li class="Mahekjain-button-1"><a th:href="@{/opere}">Le Opere</a></li>
+	        <li class="Mahekjain-button-1"><a th:href="@{/ordine}">Compra una stampa</a></li>
+	      </ul>
+	    </div>
+	    </header>
+	    
+	      <nav aria-label="breadcrumb">
+	        <ol class="breadcrumb">
+	          <li class="breadcrumb-item"><a href="#">Home</a></li>
+	          <li class="breadcrumb-item active" aria-current="page">Negozio</li>
+	        </ol>
+	      </nav>
+	
+	      <section id="principale">
+	      	<form method="post">
+				<label th:text="'Opere:'"></label>
+				<div th:each="o : ${opere}">
+					<img alt="" style="max-width: 100px" th:src="@{${o.immagine}}">
+					<input class="check" type="checkbox" th:price="${o.prezzoStampa}" name="opere" th:value="${o.id}">
+					<label th:text="${o.titolo} + ' - ' + ${o.prezzoStampa} + '€'"></label>
+					<hr>
+				</div>
+				<p id="importo">IMPORTO: 0.00€</p>
+				<input type="submit" value="compra">
+			</form>
+	      </section>
+	      
+	      <footer class="footer-distributed">
+	
+	      <div class="footer-left">
+	
+	        <span><img src="image/logo.png" height="200em" width="350em"></span>
+	
+	        <p class="footer-links">
+	          <a href="#" class="link-1">Home</a>
+	          
+	          <a href="#">L'artista</a>
+	        
+	          <a href="#">Le Opere</a>
+	        
+	          <a href="#">Negozio</a>
+	          
+	          <a href="#">Contattaci</a>
+	        </p>
+	
+	        <p class="footer-company-name">Van Gogh Inc. © 2023</p>
+	      </div>
+	
+	      <div class="footer-center">
+	
+	        <div>
+	          <i class="fa fa-map-marker"></i>
+	          <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+	        </div>
+	
+	        <div>
+	          <i class="fa fa-phone"></i>
+	          <p>+1.555.555.5555</p>
+	        </div>
+	
+	        <div>
+	          <i class="fa fa-envelope"></i>
+	          <p><a href="mailto:support@company.com">support@company.com</a></p>
+	        </div>
+	
+	      </div>
+	
+	      <div class="footer-right">
+	
+	        <p class="footer-company-about">
+	          <span>Riguardo l'azienda</span>
+	          Sono un paragrafo da riempire
+	        </p>
+	
+	        <div class="footer-icons">
+	
+	          <a href="#"><i class="fa fa-facebook"></i></a>
+	          <a href="#"><i class="fa fa-twitter"></i></a>
+	          <a href="#"><i class="fa fa-linkedin"></i></a>
+	          <a href="#"><i class="fa fa-github"></i></a>
+	
+	        </div>
+	      </div>
+	
+	    </footer>
+	    
+		<script src="https://kit.fontawesome.com/dfbcf765cf.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+		<script src="js/ordine.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
