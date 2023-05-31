@@ -1,12 +1,14 @@
 package it.corso.service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import it.corso.dao.BigliettoDao;
 import it.corso.model.Biglietto;
 import it.corso.model.Evento;
+import it.corso.model.Utente;
 
 @Service
 public class BigliettoServiceImpl implements BigliettoService {
@@ -39,7 +41,8 @@ public class BigliettoServiceImpl implements BigliettoService {
 		}
 		
 		for (int i = 0; i < getBiglietto().size(); i++) {
-			if (getBiglietto().get(i).getUtente().getId() == idUtente) {
+			if (getBiglietto().get(i).getUtente().getId() == idUtente && 
+					getBiglietto().get(i).getEvento().getId() == idEvento) {
 				return "biglietto";
 			}
 		}
@@ -72,6 +75,18 @@ public class BigliettoServiceImpl implements BigliettoService {
 	@Override
 	public List<Biglietto> getLastBiglietto() {
 		return bigliettoDao.getLastBiglietto();
+	}
+
+	@Override
+	public List<Biglietto> getBigliettobyUtente(Utente utente) {
+		List<Biglietto> biglietti = (List<Biglietto>) bigliettoDao.findAll();
+		List<Biglietto> bigliettiUtente = new ArrayList<Biglietto>();
+		for (Biglietto biglietto : biglietti) {
+			if (biglietto.getUtente().getId() == utente.getId()) {
+				bigliettiUtente.add(biglietto);
+			}
+		}
+		return bigliettiUtente;
 	}
 
 }

@@ -57,7 +57,7 @@ public class BigliettoController {
 		int idUtente= utente.getId();
 		if (bigliettoService.registraBiglietto(dataIngresso,idUtente,idEvento).equalsIgnoreCase("save")) 
 		{
-			return"redirect:/home";
+			return"redirect:/reserved";
 		}else if (bigliettoService.registraBiglietto(dataIngresso,idUtente,idEvento).equalsIgnoreCase("data")) {
 			return"redirect:/biglietto?derr";
 		}
