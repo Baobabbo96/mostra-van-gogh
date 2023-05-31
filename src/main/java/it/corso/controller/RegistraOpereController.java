@@ -21,15 +21,19 @@ public class RegistraOpereController {
 	@Autowired
 	private OperaService operaService;
 	
+	private Opera opera;
+	
 	@GetMapping
 	public String getPage(
 			Model model,
-			HttpSession session)
+			HttpSession session,
+			@RequestParam(name="id", required = false) Integer id)
 	{
 		if (session.getAttribute("admin")==null) {
 			return "redirect:/forbidden";
 		}
-		model.addAttribute("opera", new Opera());
+		opera = id == null ? new Opera() : operaService.getOperaById(id);
+		model.addAttribute("opera", opera);
 		return "inserimento_opere";		
 	}	
 	
@@ -44,7 +48,7 @@ public class RegistraOpereController {
 			@RequestParam("anno") String anno
 		) 
 	{
-		operaService.registraOpera(titolo,descrizione,immagine,
+		operaService.registraOpera(opera,titolo,descrizione,immagine,
 								   tecnica,prezzoStampa,anno);
 		return "redirect:/opere";
 		

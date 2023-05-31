@@ -106,6 +106,9 @@
 		        <td th:text="${o.titolo}"></td>
 		        <td th:text="${o.prezzoStampa} + '€'"></td>
 		        <td>
+		        	<a th:href="@{registraopere(id=${o.id})}" type="submit" class="btn btn-warning" th:text="'Modifica'"></a>
+		        </td>
+		        <td>
 		        	<a th:href="@{opereadmin/cancella(id=${o.id})}" type="submit" class="btn btn-danger" th:text="'Elimina'"></a>
 		        </td>
 		      </tr>

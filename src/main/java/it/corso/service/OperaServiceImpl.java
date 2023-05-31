@@ -19,9 +19,8 @@ public class OperaServiceImpl implements OperaService
 	private OperaDao operaDao;
 	
 	@Override
-	public void registraOpera(Object... dati) 
+	public void registraOpera(Opera opera ,Object... dati) 
 	{
-		Opera opera = new Opera();
 		String titolo = (String) dati[0];
 		opera.setTitolo(titolo);
 		String descrizione = (String) dati[1];

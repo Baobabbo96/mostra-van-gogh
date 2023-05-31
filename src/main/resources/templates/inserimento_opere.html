@@ -95,11 +95,11 @@
         <form method="post" enctype="multipart/form-data">
             <div class="form-row">
                 <label for="titolo">Titolo:</label>
-                <input type="text" name="titolo" id="titolo">
+                <input th:value="${opera.titolo}" type="text" name="titolo" id="titolo">
             </div>
             <div class="form-row">
                 <label for="descrizione">Descrizione:</label>
-                <input type="text" name="descrizione" id="descrizione">
+                <input th:value="${opera.descrizione}" type="text" name="descrizione" id="descrizione">
             </div>
             <div class="form-row">
                 <label for="immagine">Immagine:</label>
@@ -107,15 +107,15 @@
             </div>
             <div class="form-row">
                 <label for="tecnica">Tecnica:</label>
-                <input type="text" name="tecnica" id="tecnica">
+                <input th:value="${opera.tecnica}" type="text" name="tecnica" id="tecnica">
             </div>
             <div class="form-row">
                 <label for="prezzo_stampa">Prezzo di stampa:</label>
-                <input type="number" step="any" name="prezzoStampa" id="prezzo_stampa">
+                <input th:value="${opera.prezzoStampa}" type="number" step="any" name="prezzoStampa" id="prezzo_stampa">
             </div>
             <div class="form-row">
                 <label for="anno_realizzazione">Anno di realizzazione:</label>
-                <input type="text" name="anno" id="anno_realizzazione">
+                <input th:value="${opera.anno}" type="text" name="anno" id="anno_realizzazione">
             </div>
             <div class="form-row">
                 <input type="submit" value="Invia">
