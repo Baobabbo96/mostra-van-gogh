@@ -1,11 +1,122 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-	</head>
-	<body>
-		<h1>Area riservata</h1>
-		<a th:href="@{/home}">Torna alla pagina principale</a>
-	</body>
+<html>
+    <head>
+        
+      <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="ordini.css">
+        <link rel="stylesheet" href="style.css">
+
+
+        
+
+
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar ">
+                <div class="navbar-toggle">
+                  <button class="menu-toggle" onclick="apriMenu()"><img src="immagini_navbar/menubutton.png" id="menubutton"></button>
+                  <div id="logoHome">
+                    <a href="#" id="dimLogo"><img src="immagini_navbar/logo.png"></a>
+                  </div>
+                  
+                  <div>
+                    <a href="ticket.html"  class="blurry-brush-button-2 catafratto">BIGLIETTERIA</a>
+                    <a href="#" id="profileImg" style="display: none;"><img src="profile.png" alt="Profile Image"></a>
+                </div>
+          
+                  <div>
+                    <a href="login.html" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
+                    <a href="#" id="profileImg" style="display: none;"><img src="profile.png" alt="Profile Image"></a>
+                </div>
+                </div>
+                
+            </nav>
+          
+            <div class="sidebar">
+              <ul class="menu">
+                <li class="Mahekjain-button-1"><a href="#">Home</a></li>
+                <li class="Mahekjain-button-1"><a href="#">L'artista</a></li>
+                <li class="Mahekjain-button-1"><a href="#">Le Opere</a></li>
+                <li class="Mahekjain-button-1"><a href="#">Negozio</a></li>
+              </ul>
+            </div>
+        </header>
+    <!-- BIGLIETTO  -->
+
+    <div class="container">
+      <div class="catafrattopoli">
+      <h1 class="upcomming">Il tuo biglietto</h1>
+      <div class="item">
+        <div class="item-right">
+          <h2 class="num">23</h2>
+          <p class="day">Feb</p>
+          <span class="up-border"></span>
+          <span class="down-border"></span>
+          
+        </div> <!-- end item-right -->
+        
+        <div class="item-left">
+          <p class="event">Music Event</p>
+          <h2 class="title">Live In Sydney</h2>
+          
+          <div class="sce">
+            <div class="icon">
+              <i class="fa fa-table"></i>
+            </div>
+            <p>Monday 15th 2016 <br/> 15:20Pm & 11:00Am</p>
+          </div>
+          <div class="fix"></div>
+          <div class="loc">
+            <div class="icon">
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <p>North,Soth, United State , Amre <br/> Party Number 16,20</p>
+          </div>
+          <div class="fix"></div>
+          <button class="tickets">Tickets</button>
+        </div> <!-- end item-right -->
+      </div> <!-- end item -->
+    </div>
+       
+    </div>
+      <!-- FINE BIGLIETTO -->
+      
+  
+      <h3 id="riepilogo"> Riepilogo ordine: </h3>
+<div>
+        <!-- TABELLA  -->
+        
+        <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Id_ordine</th>
+                <th scope="col">Prodotto</th>
+                <th scope="col">Prezzo</th>
+                <th scope="col">Data acquisto</th>
+                <th scope="col">Totale</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2362</th>
+                <td>Stampa_Fiori</td>
+                <td>19,99 $</td>
+                <td>15/06/2023</td>
+                <td>19,99 $</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+          <!-- FINE TABELLA  -->
+          
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/ordini.js"></script>
+    
+          
+    </body>
 </html>
