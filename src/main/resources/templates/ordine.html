@@ -15,6 +15,31 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
+blurry-brush-button-3:hover,
+.blurry-brush-button-3:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em #9b0202;
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.25em);
+    border-color: #dd0000;
+    color: #860000;
+    border-radius: 50px;
+}
+.blurry-brush-button-3 {
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    color: #3d0101;
+    border-radius: 25px;
+}
+
+body {
+	margin-right: 180px;
+}
 
 :focus {
 	outline: 0px;
@@ -111,6 +136,18 @@
 .quiz_checkbox:checked:hover ~ .quiz_card_title {
 	border: 3px solid #2575fc;
 }
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 180px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #000000; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
 </style>
 </head>
 
@@ -153,6 +190,12 @@
 			</ul>
 		</div>
 	</header>
+	
+	<!-- Side navigation -->
+	<div class="sidenav">
+	  <p id="importo" style="color: white; padding-left: 15px;">IMPORTO: 0.00€</p>
+	  
+	</div>
 
 	<nav class="container-fluid" aria-label="breadcrumb">
 		<ol class="breadcrumb">
@@ -172,17 +215,19 @@
 								<div class="quiz_card_icon">
 									<img th:src="@{${o.immagine}}" height="150em" width="150em">
 								</div>
-								<div class="quiz_card_title">
+								<div class="quiz_card_title" style="height: 80px;">
 									<h3 th:text="${o.titolo}"></h3>
-									<h5 th:text="${o.prezzoStampa} + '€'"></h5>
+									<h5 th:text="${o.prezzoStampa} + '€'" style="padding-top: 5px;"></h5>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<p id="importo">IMPORTO: 0.00€</p>
-			<input type="submit" value="compra">
+		<input type="submit" class="btn btn-success" value="Acquista" style="z-index: 10;
+    position: fixed;
+    margin-left: 95rem;
+    margin-top: -73rem;">
 		</form>
 	</div>
 

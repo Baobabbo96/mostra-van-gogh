@@ -1,47 +1,46 @@
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         
-      <link rel="stylesheet" href="bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="ordini.css">
-        <link rel="stylesheet" href="style.css">
-
-
-        
-
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/ordini.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/biglietto.css">
 
     </head>
 
     <body>
         <header>
-            <nav class="navbar ">
-                <div class="navbar-toggle">
-                  <button class="menu-toggle" onclick="apriMenu()"><img src="immagini_navbar/menubutton.png" id="menubutton"></button>
-                  <div id="logoHome">
-                    <a href="#" id="dimLogo"><img src="immagini_navbar/logo.png"></a>
-                  </div>
-                  
-                  <div>
-                    <a href="ticket.html"  class="blurry-brush-button-2 catafratto">BIGLIETTERIA</a>
-                    <a href="#" id="profileImg" style="display: none;"><img src="profile.png" alt="Profile Image"></a>
-                </div>
-          
-                  <div>
-                    <a href="login.html" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
-                    <a href="#" id="profileImg" style="display: none;"><img src="profile.png" alt="Profile Image"></a>
-                </div>
-                </div>
-                
-            </nav>
-          
-            <div class="sidebar">
-              <ul class="menu">
-                <li class="Mahekjain-button-1"><a href="#">Home</a></li>
-                <li class="Mahekjain-button-1"><a href="#">L'artista</a></li>
-                <li class="Mahekjain-button-1"><a href="#">Le Opere</a></li>
-                <li class="Mahekjain-button-1"><a href="#">Negozio</a></li>
-              </ul>
-            </div>
-        </header>
+        <nav class="navbar ">
+        <div class="navbar-toggle">
+          <button class="menu-toggle" onclick="apriMenu()"><img th:src="@{image/menubutton.png}" id="menubutton"></button>
+          <div id="logoHome">
+            <a href="#" id="dimLogo"><img src="image/logo.png"></a>
+          </div>
+
+          <div>
+            <a th:href="@{/biglietto}"  class="blurry-brush-button-2 catafratto">BIGLIETTERIA</a>
+            <a href="#" id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
+        </div>
+
+          <div>
+            <a th:if="${!logged}" th:href="@{/login}" id="loginBtn" class="catafratto blurry-brush-button-1">Login</a>
+            <a th:if="${logged}" th:href="@{/reserved}" id="resBtn" class="catafratto blurry-brush-button-1">Account</a>
+            <a  id="profileImg" style="display: none;"><img src="image/profile.png" alt="Profile Image"></a>
+        </div>
+        </div>
+    </nav>
+        <div class="sidebar">
+      <ul class="menu">
+        <li class="Mahekjain-button-1"><a th:href="@{/home}">Home</a></li>
+        <li class="Mahekjain-button-1"><a th:href="@{/biografia}">L'artista</a></li>
+        <li class="Mahekjain-button-1"><a th:href="@{/opere}">Le Opere</a></li>
+        <li class="Mahekjain-button-1"><a th:href="@{/ordine}">Compra una stampa</a></li>
+      </ul>
+    </div>
+    </header>
+
+    
     <!-- BIGLIETTO  -->
 
     <div class="container">
@@ -53,7 +52,6 @@
           <p class="day">Feb</p>
           <span class="up-border"></span>
           <span class="down-border"></span>
-          
         </div> <!-- end item-right -->
         
         <div class="item-left">
@@ -83,9 +81,9 @@
       <!-- FINE BIGLIETTO -->
       
   
-      <h3 id="riepilogo"> Riepilogo ordine: </h3>
-<div>
-        <!-- TABELLA  -->
+      
+<div class="container">
+        <!-- TABELLA  --><h3 id="riepilogo"> Riepilogo ordine: </h3>
         
         <table class="table table-hover table-dark">
             <thead>
@@ -112,11 +110,8 @@
           </table>
         </div>
 
-          <!-- FINE TABELLA  -->
-          
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/ordini.js"></script>
-    
-          
+     <script src="js/bootstrap.min.js"></script>
+	<script src="js/reserved.js"></script> 
+    <script src="js/script.js"></script> 
     </body>
 </html>
