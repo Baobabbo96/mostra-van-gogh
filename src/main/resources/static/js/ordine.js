@@ -8,6 +8,6 @@ check.forEach(c => {
 		} else {
 			importo -= prezzo;
 		}
-		document.getElementById("importo").innerHTML = 'IMPORTO: ' + importo + '€';
+		document.getElementById("importo").innerHTML = 'IMPORTO: ' + importo.toFixed(2) + '€';
 	})
 })
