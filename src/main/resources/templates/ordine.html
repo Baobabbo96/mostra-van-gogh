@@ -16,6 +16,10 @@
 	-webkit-box-sizing: border-box;
 }
 
+body {
+	margin-right: 180px;
+}
+
 :focus {
 	outline: 0px;
 }
@@ -111,6 +115,18 @@
 .quiz_checkbox:checked:hover ~ .quiz_card_title {
 	border: 3px solid #2575fc;
 }
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 180px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #000000; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
 </style>
 </head>
 
@@ -153,6 +169,12 @@
 			</ul>
 		</div>
 	</header>
+	
+	<!-- Side navigation -->
+	<div class="sidenav">
+	  <p id="importo" style="color: white; padding-left: 15px;">IMPORTO: 0.00€</p>
+	  
+	</div>
 
 	<nav class="container-fluid" aria-label="breadcrumb">
 		<ol class="breadcrumb">
@@ -172,17 +194,19 @@
 								<div class="quiz_card_icon">
 									<img th:src="@{${o.immagine}}" height="150em" width="150em">
 								</div>
-								<div class="quiz_card_title">
+								<div class="quiz_card_title" style="height: 80px;">
 									<h3 th:text="${o.titolo}"></h3>
-									<h5 th:text="${o.prezzoStampa} + '€'"></h5>
+									<h5 th:text="${o.prezzoStampa} + '€'" style="padding-top: 5px;"></h5>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<p id="importo">IMPORTO: 0.00€</p>
-			<input type="submit" value="compra">
+		<input type="submit" class="btn btn-success" value="Acquista" style="z-index: 10;
+    position: fixed;
+    margin-left: 95rem;
+    margin-top: -73rem;">
 		</form>
 	</div>
 
