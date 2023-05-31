@@ -33,12 +33,15 @@ public class BigliettoController {
 			@RequestParam(name="derr", required = false) String derr,
 			@RequestParam(name="berr", required = false) String berr) 
 	{	
+		boolean logged = false;
 		if  (session.getAttribute("utente") != null) 
 		{
+			logged = true;
 			List<Evento> eventi= eventoService.getEventi();
 			model.addAttribute("dataError", derr != null);
 			model.addAttribute("bigliettoError", berr != null);
-			model.addAttribute("eventi", eventi);	
+			model.addAttribute("eventi", eventi);
+			model.addAttribute("logged", logged);
 			return "biglietto";
 		}
 		return "redirect:/forbidden";
