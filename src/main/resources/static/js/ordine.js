@@ -1,5 +1,5 @@
 let importo = 0;
-const check = document.querySelectorAll('.check');
+const check = document.querySelectorAll('.quiz_checkbox');
 check.forEach(c => {
 	c.addEventListener('change',() => {
 		const prezzo = parseFloat(c.getAttribute('price'));
