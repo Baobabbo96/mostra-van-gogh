@@ -5,10 +5,10 @@
 }
 
 body {
-	background-image:    url(../image/ritratto2.jpg);
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;
+  background-image:    url(../image/ritratto2.jpg);
+  background-size:     cover;                      <------
+  background-repeat:   no-repeat;
+  background-position: center center;
 /*   background:#DDD; */
   font-family: 'Inknut Antiqua', serif;
   font-family: 'Ravi Prakash', cursive;
@@ -19,8 +19,7 @@ body {
 h1 {
   backdrop-filter: blur(5px) saturate(90%);
   color: lightblue;
-  font-size: 5em;
-   width: max-content;
+  width: max-content;
   padding: 20px;
   margin: 30px auto;
 }
