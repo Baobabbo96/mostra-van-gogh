@@ -20,11 +20,10 @@ public class ListaOpereController {
 	public String getPage(
 			HttpSession session, 
 			Model model) {
-		boolean isAdmin = false;
-		if (session.getAttribute("admin") != null) {
-			isAdmin=true;
-		}
-		model.addAttribute("isAdmin", isAdmin);
+		boolean logged = false;
+		if (session.getAttribute("utente") != null)
+			logged = true;
+		model.addAttribute("logged", logged);
 		model.addAttribute("opere",operaService.getOpere());
 		return "lista_opere";
 	
