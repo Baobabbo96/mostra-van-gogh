@@ -50,7 +50,7 @@ public class RegistraOpereController {
 	{
 		operaService.registraOpera(opera,titolo,descrizione,immagine,
 								   tecnica,prezzoStampa,anno);
-		return "redirect:/opere";
+		return "redirect:/opereadmin";
 		
 	}
 }
