@@ -12,6 +12,7 @@ import it.corso.model.Biglietto;
 import it.corso.model.Ordine;
 import it.corso.model.Utente;
 import it.corso.service.BigliettoService;
+import it.corso.service.UtenteService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -20,6 +21,9 @@ public class ReservedController {
 	
 	@Autowired
 	BigliettoService bigliettoService;
+	
+	@Autowired
+	private UtenteService utenteService;
 
 	@GetMapping
 	public String getPage(HttpSession session,
@@ -31,7 +35,9 @@ public class ReservedController {
 			logged = true;
 			Utente utente = (Utente) session.getAttribute("utente");
 			List<Biglietto> biglietti = bigliettoService.getBigliettobyUtente(utente);
-			List<Ordine> ordini = utente.getOrdini();
+			int id = utente.getId();
+			Utente utente2 = utenteService.getUtenteById(id);
+			List<Ordine> ordini = utente2.getOrdini();
 			model.addAttribute("logged", logged);
 			model.addAttribute("utente", utente);
 			model.addAttribute("ordini", ordini);
