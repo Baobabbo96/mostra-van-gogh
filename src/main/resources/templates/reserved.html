@@ -36,6 +36,7 @@
         <li class="Mahekjain-button-1"><a th:href="@{/biografia}">L'artista</a></li>
         <li class="Mahekjain-button-1"><a th:href="@{/opere}">Le Opere</a></li>
         <li class="Mahekjain-button-1"><a th:href="@{/ordine}">Compra una stampa</a></li>
+        <li><a th:if="${logged}" th:href="@{/reserved/logout}" id="resBtn" class="catafratto blurry-brush-button-1">Logout</a></li>
       </ul>
     </div>
     </header>

@@ -40,4 +40,11 @@ public class ReservedController {
 		}
 		return "redirect:/login";
 	}
+	
+	@GetMapping("/logout")
+	public String logOut(
+			HttpSession session) {
+		session.removeAttribute("utente");
+		return "redirect:/home";
+	}
 }

@@ -58,6 +58,6 @@ public class OrdineController
 		Utente utente = (Utente) session.getAttribute("utente");
 		int idUtente = utente.getId();
 		ordineService.registraOrdine(ordine, idUtente, idOpere);
-		return "redirect:/home";
+		return "redirect:/reserved";
 	}
 }
